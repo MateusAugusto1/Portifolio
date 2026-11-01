@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#07090d" name="theme-color"/>
+<meta content="Portfólio de Mateus Augusto Felisbino. Desenvolvedor de software e jogos com projetos em React, TypeScript, React Native, Unity e C#." id="meta-description" name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Mateus Augusto | Software &amp; Game Developer" property="og:title"/>
+<meta content="Projetos reais em React, TypeScript e React Native, além de jogos independentes em Unity e C#." id="og-description" property="og:description"/>
+<title>Mateus Augusto | Desenvolvedor de Software &amp; Jogos</title>
+<link href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNSIgZmlsbD0iIzA4MGExMCIvPjxwYXRoIGQ9Ik0zMiAzIDU2IDE3djMwTDMyIDYxIDggNDdWMTdaIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjRjNjMiIHN0cm9rZS1vcGFjaXR5PSIuOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTE4IDQyVjIybDE0IDE1IDE0LTE1djIwIiBzdHJva2U9IiNmNGY0ZjciIHN0cm9rZS13aWR0aD0iNS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSI0OSIgY3k9IjE1IiByPSIzIiBmaWxsPSIjZmY0YzYzIi8+PC9zdmc+" rel="icon" type="image/svg+xml"/>
+<style data-source="styles.css">@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#0b121b;--bg2:#0e1922;--card:#111d27;--surface:#14232d;--text:#edf4f2;--muted:#91a3ae;--subtle:#647781;--accent:#65debf;--accent-dark:#102a27;--line:#25353e;--code:#0d1822;--shadow:rgba(0,0,0,.32);--white:#fff;--header:rgba(11,18,27,.88);color-scheme:dark}
+:root[data-theme="light"]{--bg:#f3f7f7;--bg2:#e9f0f0;--card:#fff;--surface:#e7f0ee;--text:#14232b;--muted:#475a63;--subtle:#738890;--accent:#087f68;--accent-dark:#ddf4eb;--line:#d5e1e1;--code:#15252d;--shadow:rgba(13,44,47,.1);--header:rgba(243,247,247,.9);color-scheme:light}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',Inter,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.shell{width:min(1190px,calc(100% - 72px));margin-inline:auto}
+.skip-link{position:fixed;z-index:1000;top:-70px;left:20px;background:var(--accent);color:#071918;padding:12px 18px;border-radius:10px}.skip-link:focus{top:20px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.page-glow{position:absolute;z-index:0;inset:0 0 auto;min-height:760px;background:radial-gradient(ellipse 65% 60% at 78% 26%,rgba(38,120,117,.12),transparent 75%);pointer-events:none}
+.progress{position:fixed;height:2px;width:0;left:0;top:0;background:var(--accent);z-index:110}
+.site-header{height:82px;position:sticky;top:0;z-index:80;background:var(--header);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0}.brand-icon{width:43px;height:43px;border:1.5px solid var(--accent);border-radius:12px;display:grid;place-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-6px;padding-right:5px;font-size:22px;line-height:1}.brand-icon span,.footer-brand span{color:var(--accent)}.brand-text{font-family:'Space Grotesk',sans-serif;letter-spacing:-.5px;font-size:14px;font-weight:700;display:flex;flex-direction:column;line-height:1.12}.brand-text span{color:var(--accent);font-size:10px;letter-spacing:2px;margin-top:4px}
+.nav-menu,.nav-actions{display:flex;align-items:center}.nav-menu{gap:32px;margin-left:auto}.nav-menu>a{color:var(--muted);font-size:13px;font-weight:600;transition:color .2s}.nav-menu>a:hover,.footer-links a:hover{color:var(--accent)}.nav-menu>a.nav-contact{color:var(--text);border:1px solid var(--line);padding:10px 15px;border-radius:9px}.nav-contact span{color:var(--accent);padding-left:5px}.nav-actions{gap:10px}.lang-toggle,.icon-button{height:39px;border:1px solid var(--line);background:transparent;color:var(--text);border-radius:9px;display:grid;place-items:center;transition:border-color .2s,background .2s}.lang-toggle{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;display:flex;align-items:center;gap:8px;padding:0 12px}.lang-toggle span{color:var(--accent)}.icon-button{width:40px}.lang-toggle:hover,.icon-button:hover{border-color:var(--accent);background:var(--surface)}.menu-toggle{display:none}
+.hero{position:relative;min-height:685px;display:grid;grid-template-columns:1.13fr .87fr;gap:50px;align-items:center;padding-top:52px;padding-bottom:70px}
+.hero-copy{position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 15px;border:1px solid rgba(101,222,191,.25);border-radius:40px;background:rgba(40,135,115,.07);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--accent);margin:0 0 38px}.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(101,222,191,.12)}.hero-intro{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:4px;color:var(--muted);margin:0 0 11px}
+h1,h2,h3,h4,p{margin-top:0}h1,h2,h3{font-family:'Space Grotesk',sans-serif}h1{font-size:clamp(56px,5.45vw,83px);line-height:1.035;letter-spacing:-5px;margin:0 0 22px;font-weight:700}h1 .surname{display:block}h1 .punct{color:var(--accent)}.hero-role{font-family:'Space Grotesk',sans-serif;font-size:clamp(23px,2.35vw,34px);line-height:1.2;letter-spacing:-1.4px;font-weight:500;color:var(--accent);margin:0 0 21px}.hero-role .and{color:var(--muted)}.hero-description{max-width:550px;color:var(--muted);font-size:15px;line-height:1.95;margin-bottom:29px}
+.hero-actions,.contact-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.button{border-radius:10px;padding:14px 22px;display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:49px;font-size:13px;font-weight:700;transition:transform .2s,border-color .2s,background .2s;white-space:nowrap}.button:hover{transform:translateY(-2px)}.button span:last-child{font-size:17px;font-weight:400}.button-primary{background:#65debf;border:1px solid #65debf;color:#0b2021}.button-primary:hover{background:#94efda}.button-secondary{border:1px solid var(--line);background:transparent;color:var(--text)}.button-secondary:hover{border-color:var(--accent);background:var(--surface)}.hero-bottom{display:flex;align-items:center;gap:16px;margin-top:55px}.hero-bottom p{font-size:11px;letter-spacing:.2px;color:var(--subtle);margin:0}.hero-line{width:38px;height:1px;background:var(--accent)}
+.hero-visual{height:508px;position:relative;isolation:isolate}.visual-grid{position:absolute;inset:2% -6%;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:39px 39px;mask-image:radial-gradient(ellipse 76% 76% at center,#000 30%,transparent 100%)}.visual-orbit{position:absolute;width:320px;height:320px;border:1px solid rgba(101,222,191,.15);border-radius:50%;left:10%;top:14%;z-index:-1}.orb-two{width:430px;height:430px;left:-2%;top:3%;border-color:rgba(101,222,191,.08)}
+.editor-window{position:absolute;top:99px;right:12px;left:5px;background:var(--code);border:1px solid #35505c;border-radius:15px;box-shadow:0 27px 70px rgba(0,0,0,.45),0 0 90px rgba(56,181,156,.06);overflow:hidden;transform:rotate(-2deg)}.editor-titlebar{height:46px;display:flex;align-items:center;padding:0 17px;border-bottom:1px solid #263c47;color:#99adb6;font-family:'DM Mono',monospace;font-size:11px;gap:16px}.editor-dots{display:flex;gap:6px}.editor-dots i{height:8px;width:8px;border-radius:50%;background:#ff6e70}.editor-dots i:nth-child(2){background:#efb765}.editor-dots i:nth-child(3){background:#68cd99}.editor-branch{margin-left:auto;color:#68cd99}.editor-code{padding:26px 23px 27px;font-family:'DM Mono',monospace;font-size:clamp(10px,1.1vw,13px);line-height:2;white-space:nowrap;color:#b5d2dc;overflow:hidden}.editor-code em{font-style:normal;display:inline-block;width:22px;color:#49626d;user-select:none}.editor-code .kw{color:#a7b7fa}.editor-code .fn{color:#f5cb92}.editor-code .str{color:#91d6ad}.editor-code .code-gap{height:8px}.cursor{display:inline-block;width:7px;height:14px;background:#65debf;vertical-align:-2px;margin-left:6px;animation:blink 1.2s step-end infinite}@keyframes blink{50%{opacity:0}}.editor-footer{display:flex;align-items:center;justify-content:space-between;padding:11px 17px;border-top:1px solid #263c47;font-family:'DM Mono',monospace;font-size:10px;color:#8ba5ac}.signal-dot{display:inline-block;width:7px;height:7px;background:#65debf;border-radius:50%;margin-right:7px}
+.floating-tech{position:absolute;z-index:2;display:flex;align-items:center;gap:12px;padding:13px 16px;background:#1b3037;border:1px solid #39605b;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.34);color:#eaf5f2;animation:floaty 6s ease-in-out infinite}.float-top{right:-14px;top:57px}.float-bottom{bottom:34px;left:-42px;animation-delay:-3s}.floating-tech strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:-.2px}.floating-tech small{display:block;font-family:'DM Mono',monospace;font-size:10px;color:#95b2ae;margin-top:5px}.tech-symbol{font-size:20px;color:#65debf;font-family:'DM Mono',monospace;background:#233d42;border-radius:8px;width:42px;height:42px;display:grid;place-items:center}.unity-mark{font-size:27px}@keyframes floaty{50%{transform:translateY(-8px)}}
+.tech-marquee{height:74px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;display:flex;align-items:center}.marquee-inner{width:min(1190px,calc(100% - 72px));margin-inline:auto;display:flex;justify-content:space-between;align-items:center;gap:22px;white-space:nowrap}.marquee-inner span{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--subtle);font-weight:500}.marquee-inner i{display:block;width:5px;height:5px;min-width:5px;background:var(--accent);transform:rotate(45deg)}
+.section{padding-top:117px;padding-bottom:112px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:37px}.section-label{display:flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;letter-spacing:2.2px;font-size:10px;font-weight:500;color:var(--accent);margin-bottom:19px}.label-index{color:var(--subtle)}.section h2,.about-grid h2{font-size:clamp(38px,4.05vw,59px);line-height:1.12;letter-spacing:-2.7px;margin:0;font-weight:700}.section h2 span,.about-grid h2 span{color:var(--accent)}.section-subtitle{color:var(--muted);font-size:13px;line-height:1.9;max-width:340px;margin:0 0 4px}
+.filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:29px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:11px 18px;font-family:'DM Mono',monospace;font-size:11px;transition:all .2s}.filter span{margin-left:5px;opacity:.6}.filter:hover{color:var(--text);border-color:var(--accent)}.filter.active{background:var(--accent-dark);color:var(--accent);border-color:var(--accent)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.project-card{border:1px solid var(--line);background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}.project-card:hover{transform:translateY(-5px);border-color:rgba(101,222,191,.43);box-shadow:0 15px 42px var(--shadow)}.project-card[hidden]{display:none!important}.project-featured{grid-column:1/-1;flex-direction:row;min-height:410px}.project-featured .project-art{width:52%;min-height:410px}.project-featured .project-info{width:48%;padding:48px 42px;display:flex;flex-direction:column;align-items:flex-start}.project-featured .project-info h3{font-size:29px}.project-featured .project-info p{max-width:425px}.project-featured .project-info .project-link{margin-top:auto}.project-art{position:relative;height:250px;overflow:hidden;display:grid;place-items:center;isolation:isolate}.art-caption{position:absolute;bottom:12px;left:15px;color:#c0dad5;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2px;background:rgba(8,23,30,.6);border-radius:4px;padding:5px 7px}.project-info{padding:30px 30px 28px;flex:1;display:flex;flex-direction:column;align-items:flex-start}.project-overline{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-bottom:17px}.type-pill{color:var(--accent);border:1px solid rgba(101,222,191,.22);background:rgba(101,222,191,.07);border-radius:4px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;padding:7px 9px}.type-dev{color:#e8b981;border-color:rgba(232,185,129,.25);background:rgba(232,185,129,.07)}.index{color:var(--subtle);font-family:'DM Mono',monospace;font-size:10px}.project-info h3{font-size:24px;letter-spacing:-.8px;line-height:1.2;margin:0 0 13px}.project-info p{font-size:13px;line-height:1.85;color:var(--muted);margin:0 0 20px}.tag-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:26px}.tag-list span,.skill-tags span{background:var(--surface);color:var(--muted);border:1px solid var(--line);font-family:'DM Mono',monospace;border-radius:5px;padding:7px 10px;font-size:10px}.project-link{margin-top:auto;display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;font-weight:700;transition:color .2s}.project-link span:last-child{color:var(--accent);font-size:17px}.project-link:hover{color:var(--accent)}.project-unavailable{color:var(--subtle);cursor:default}.project-unavailable span:last-child{color:var(--subtle)}.projects-footnote{color:var(--subtle);font-size:11px;line-height:1.8;margin:17px 0 0}.projects-footnote span:first-child{color:var(--accent)}.view-all{text-align:center;margin-top:33px}.text-link{color:var(--accent);font-size:12px;font-weight:700;border-bottom:1px solid var(--accent);padding-bottom:7px}.text-link span{margin-left:7px}
+.art-fleet{background:linear-gradient(145deg,#20424b,#102b35 78%);padding:38px 35px}.fleet-mock{width:100%;max-width:540px;height:295px;display:flex;box-shadow:0 25px 40px rgba(1,15,21,.55);background:#172935;border:1px solid #45616b;border-radius:10px;overflow:hidden;transform:perspective(950px) rotateY(-4deg) rotateX(1deg)}.fleet-sidebar{width:48px;background:#10222e;display:flex;flex-direction:column;gap:22px;align-items:center;padding-top:19px;color:#73939e;border-right:1px solid #2a4551}.fleet-sidebar b{font-size:16px;font-weight:400}.fleet-logo{width:23px;height:23px;display:flex;align-items:flex-end;gap:3px;margin-bottom:17px}.fleet-logo span{height:17px;width:5px;background:#69d4b8;border-radius:2px}.fleet-logo span:nth-child(2){height:23px}.fleet-logo span:nth-child(3){height:12px}.fleet-main{padding:16px;width:calc(100% - 48px);min-width:0}.fleet-header{display:flex;justify-content:space-between;color:#d7eceb;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px}.fleet-header span span{color:#76dfc9}.fleet-small-dot{width:7px;height:7px;border-radius:50%;background:#69dab8}.fleet-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.fleet-stats>div{padding:10px;background:#203845;border:1px solid #30505a;border-radius:6px}.fleet-stats small{display:block;font-family:'DM Mono',monospace;font-size:8px;color:#9eb6bb}.fleet-stats strong{display:block;font-size:17px;color:#e8f2f1;margin-top:2px}.fleet-stats>div:first-child strong{color:#71dec5}.fleet-map{height:175px;border-radius:6px;overflow:hidden;background:#254653;position:relative}.fleet-map>svg{width:100%;height:100%}.map-legend{position:absolute;right:8px;bottom:8px;background:#18303ae9;border-radius:5px;color:#c6dbdc;font-family:'DM Mono',monospace;font-size:7px;display:flex;gap:9px;padding:7px}.map-legend i{width:6px;height:6px;background:#65debf;border-radius:50%;display:inline-block}.map-legend span:last-child i{background:#eeb873}
+.art-mobile{background:radial-gradient(circle at 50% 35%,#517270,#172e33 76%)}.phone{height:315px;width:167px;background:#08181e;border:5px solid #0e1f23;box-shadow:0 20px 40px rgba(0,0,0,.5);border-radius:27px;padding:7px;transform:rotate(-8deg) translateY(24px);position:relative}.phone-camera{position:absolute;z-index:2;top:11px;left:49px;width:65px;height:15px;border-radius:10px;background:#111f21}.phone-screen{height:100%;border-radius:17px;overflow:hidden;background:#f2f8f6;padding:26px 10px 10px;color:#142b30;font-family:'DM Sans',sans-serif}.phone-title{font-family:'Space Grotesk';font-size:15px;font-weight:700}.phone-title span{color:#2aa99c}.phone-title-small{font-size:8px;color:#7c8f91;margin:4px 0 8px}.phone-map{height:110px;border-radius:7px;overflow:hidden;background:#dfeee9}.phone-map svg{width:100%;height:100%}.phone-line{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #e0edeb;border-radius:6px;padding:7px 6px;margin-top:6px}.phone-line span{color:#2aa99c;font-size:12px}.phone-line div{flex:1}.phone-line b{font-size:9px;display:block}.phone-line small{font-size:7px;color:#819394}.phone-line i{font-style:normal;color:#2aa99c;font-size:12px}
+.art-ruins{background:#1e2f3d}.art-aquacare{background:#143944}.game-art{width:100%;height:100%;object-fit:cover}
+.art-login{background:radial-gradient(circle at 85% 10%,#466a88,#19273d 65%)}.login-mock{background:rgba(231,242,247,.96);color:#273b48;border-radius:12px;width:240px;padding:20px;transform:rotate(-5deg) translateY(15px);box-shadow:0 20px 40px rgba(0,0,0,.32)}.login-orb{width:24px;height:24px;border-radius:8px;background:#597aaf;margin-bottom:12px}.login-mock h4{font-family:'Space Grotesk';font-size:17px;margin:0 0 4px}.login-mock p{font-size:9px;color:#8595a7;margin:0 0 14px}.mock-input{height:29px;border:1px solid #dbe4eb;border-radius:5px;color:#8da0ad;background:#fff;font-size:9px;margin-bottom:7px;padding:7px}.mock-button{padding:9px;background:#3c5f99;border-radius:5px;color:#fff;font-size:10px;text-align:center;margin-top:12px}.mock-button span{float:right}
+.about-section{background:var(--bg2);border-block:1px solid var(--line)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;padding-top:110px;padding-bottom:105px}.about-left{position:relative}.about-grid h2{max-width:480px}.about-art{height:230px;display:flex;align-items:center;justify-content:center;gap:16px;margin-top:25px;opacity:.85;color:var(--subtle)}.big-bracket{font-family:'Space Grotesk';font-size:160px;font-weight:500;line-height:1}.about-asterisk{font-size:100px;color:var(--accent);animation:soft-spin 28s linear infinite}@keyframes soft-spin{to{transform:rotate(360deg)}}.about-right{padding-top:39px}.about-right p{color:var(--muted);font-size:14px;line-height:1.95;margin-bottom:18px}.about-right .about-lead{color:var(--text);font-family:'Space Grotesk';font-size:20px;font-weight:500;line-height:1.6;letter-spacing:-.4px;margin-bottom:21px}.about-facts{display:grid;grid-template-columns:1.25fr 1fr;gap:15px;border-top:1px solid var(--line);padding-top:29px;margin-top:31px}.about-facts div{display:flex;flex-direction:column;gap:7px}.about-facts span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--accent)}.about-facts strong{font-size:12px;font-weight:700}.about-facts small{color:var(--subtle);font-size:11px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.skill-panel{border:1px solid var(--line);border-radius:14px;padding:27px 22px 24px;background:var(--card);min-height:278px;transition:border-color .2s,transform .2s}.skill-panel:hover{border-color:var(--accent);transform:translateY(-4px)}.skill-icon{font-family:'DM Mono',monospace;font-size:23px;color:var(--accent);display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:1px solid rgba(101,222,191,.25);border-radius:13px;background:var(--accent-dark);margin-bottom:22px}.skill-panel h3{font-size:17px;letter-spacing:-.5px;margin-bottom:10px}.skill-panel p{color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:20px;min-height:42px}.skill-tags{display:flex;flex-wrap:wrap;gap:6px}.skill-tags span{padding:7px 8px}
+.experience{padding-top:45px}.timeline{max-width:860px;margin:50px auto 0}.timeline-item{display:grid;grid-template-columns:152px 30px minmax(0,1fr);gap:27px;min-height:140px}.timeline-date{font-family:'DM Mono',monospace;color:var(--subtle);font-size:12px;padding-top:7px;text-align:right}.timeline-marker{position:relative}.timeline-marker:before{content:'';position:absolute;top:7px;left:8px;width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px var(--accent-dark)}.timeline-marker:after{content:'';position:absolute;top:26px;bottom:0;left:12px;background:var(--line);width:1px}.timeline-item:last-child .timeline-marker:after{display:none}.timeline-content{padding-bottom:33px;border-bottom:1px solid var(--line);margin-bottom:28px}.timeline-item:last-child .timeline-content{border:0}.timeline-content h3{font-size:20px;letter-spacing:-.5px;margin:0 0 5px}.timeline-company{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent)}.timeline-content p{color:var(--muted);font-size:12px;line-height:1.8;margin:11px 0 0}.education-item .timeline-marker:before{background:#e1b078;box-shadow:0 0 0 5px rgba(225,176,120,.12)}
+.contact-section{background:#102b30;border-top:1px solid #24524f;border-bottom:1px solid #24524f;color:#edf4f2;position:relative;overflow:hidden}.contact-section:after{content:'↗';font-family:'Space Grotesk';font-size:550px;font-weight:700;position:absolute;right:-40px;bottom:-345px;line-height:1;color:rgba(101,222,191,.04);pointer-events:none}.contact-inner{padding-top:97px;padding-bottom:98px;position:relative;z-index:1}.contact-section h2{font-family:'Space Grotesk';font-size:clamp(40px,5.25vw,72px);letter-spacing:-3.7px;line-height:1.11;margin:0 0 23px}.contact-section h2 span{color:#65debf}.contact-section p{max-width:570px;color:#a1bdb9;line-height:1.9;font-size:14px;margin-bottom:29px}.contact-actions{margin-bottom:23px}.contact-section .button-secondary{border-color:#47706a;color:#e8f7f2}.contact-section .button-secondary:hover{background:#1e4546}.email-address{color:#8eaaa5;font-family:'DM Mono',monospace;font-size:12px;text-decoration:underline;text-decoration-color:#49756d;text-underline-offset:5px}
+.footer{background:var(--bg);padding:24px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font-family:'Space Grotesk';font-weight:700;font-size:26px;letter-spacing:-5px;padding-right:5px}.footer-note{font-size:11px;color:var(--subtle)}.footer-links{display:flex;gap:22px}.footer-links a{color:var(--muted);font-family:'DM Mono',monospace;font-size:11px;transition:color .2s}
+@media(max-width:1150px){.nav-menu{gap:20px}.hero{gap:20px}.floating-tech.float-top{right:-4px}.floating-tech.float-bottom{left:-9px}.skills-grid{grid-template-columns:repeat(2,1fr)}.skill-panel{min-height:248px}}
+@media(max-width:920px){.shell{width:min(100% - 44px,1190px)}.site-header{height:74px}.nav-menu{display:none;position:absolute;top:74px;left:-22px;right:-22px;padding:22px;background:var(--bg2);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;box-shadow:0 16px 24px var(--shadow)}.nav-menu.open{display:flex}.nav-menu>a{padding:14px 12px;font-size:14px}.nav-menu>a.nav-contact{margin-top:10px}.menu-toggle{display:grid}.hero{grid-template-columns:1fr;min-height:auto;padding-top:85px;padding-bottom:65px}.hero-copy{max-width:760px}.hero-visual{height:430px;width:min(590px,100%);margin-inline:auto}.hero-visual .editor-window{top:68px}.hero h1{font-size:clamp(58px,9vw,84px)}.marquee-inner{width:max-content;gap:25px;padding-inline:22px}.tech-marquee{overflow:hidden}.about-grid{gap:38px}.about-art{height:180px}.big-bracket{font-size:120px}.about-asterisk{font-size:70px}.project-featured .project-info{padding:37px 30px}.project-featured .project-art{min-height:390px}.project-featured{min-height:390px}}
+@media(max-width:650px){.shell{width:calc(100% - 36px)}.brand-text{font-size:12px}.brand-icon{width:38px;height:38px;font-size:21px}.nav-actions{gap:6px}.lang-toggle,.icon-button{height:36px}.icon-button{width:36px}.nav-menu{left:-18px;right:-18px}.hero{padding-top:63px;gap:0}.eyebrow{margin-bottom:30px;font-size:9px;padding:8px 10px}.hero-intro{font-size:10px}h1{letter-spacing:-3px!important}.hero h1{font-size:clamp(44px,11.3vw,67px);line-height:1.07}.hero-role{font-size:clamp(20px,5.3vw,27px);letter-spacing:-.8px}.hero-description{font-size:14px;line-height:1.9}.hero-actions{align-items:stretch}.button{padding:13px 16px;gap:16px;font-size:12px}.hero-bottom{margin-top:34px}.hero-visual{height:365px;margin-top:24px;overflow:clip}.orb-two{width:100%;height:350px;left:0;top:4%}.editor-window{left:5px;right:4px!important;top:75px!important}.editor-code{font-size:clamp(8px,2.1vw,11px);padding:19px 13px;line-height:2.1}.editor-code em{width:18px}.editor-titlebar{height:40px;padding-inline:12px}.floating-tech{padding:8px 10px;gap:8px}.floating-tech.float-top{top:35px;right:0}.floating-tech.float-bottom{bottom:5px;left:0}.floating-tech strong{font-size:10px}.floating-tech small{font-size:8px}.tech-symbol{width:30px;height:30px;font-size:15px}.tech-marquee{height:61px}.marquee-inner span{font-size:10px}.section{padding-top:79px;padding-bottom:77px}.section-head{display:block}.section h2,.about-grid h2{font-size:clamp(36px,8.7vw,48px);letter-spacing:-1.8px}.section-subtitle{max-width:100%;margin:17px 0 0}.filter-bar{gap:7px}.filter{padding:10px 14px;font-size:10px}.projects-grid{grid-template-columns:1fr;gap:16px}.project-featured{grid-column:auto;flex-direction:column;min-height:auto}.project-featured .project-art{width:100%;height:265px;min-height:265px}.project-featured .project-info{width:100%;padding:29px 24px}.project-featured .project-info h3{font-size:25px}.project-art{height:235px}.project-info{padding:25px 24px}.project-info h3{font-size:23px}.fleet-mock{height:270px;transform:scale(.9) rotate(-3deg)}.about-grid{grid-template-columns:1fr;gap:0;padding-top:80px;padding-bottom:75px}.about-art{display:none}.about-right{padding-top:25px}.about-right .about-lead{font-size:18px}.about-facts{grid-template-columns:1fr 1fr}.skills-grid{grid-template-columns:1fr;gap:12px}.skill-panel{min-height:auto}.skill-panel p{min-height:0}.experience{padding-top:10px}.timeline{margin-top:35px}.timeline-item{grid-template-columns:76px 16px 1fr;gap:12px}.timeline-date{font-size:9px}.timeline-marker:before{left:4px;width:9px;height:9px}.timeline-marker:after{left:8px}.timeline-content h3{font-size:17px}.timeline-content{padding-bottom:23px;margin-bottom:23px}.contact-inner{padding-top:73px;padding-bottom:77px}.contact-section h2{font-size:clamp(38px,9vw,52px);letter-spacing:-1.9px}.contact-section p{font-size:13px}.contact-section:after{right:-190px;bottom:-300px}.footer-inner{flex-wrap:wrap;gap:14px}.footer-note{order:3;width:100%}.footer-links{margin-left:auto;gap:12px}.footer-links a{font-size:10px}}
+@media(max-width:370px){.brand-text{display:none}.hero h1{font-size:42px}.button{flex:1}.filter{padding:9px 11px}.project-info{padding:24px 18px}.about-facts{grid-template-columns:1fr;gap:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+
+<style data-source="enhancements.css">/* The interactive edition layers tasteful motion and accessible discovery on the original layout. */
+[hidden]{display:none!important}
+:root{--soft-accent:rgba(101,222,191,.14);--dialog-bg:#101e28}
+:root[data-theme="light"]{--soft-accent:rgba(9,127,105,.10);--dialog-bg:#f7faf9}
+body.has-overlay{overflow:hidden}
+.command-trigger{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--muted);font-size:11px;font-weight:600;padding:9px 9px 9px 12px;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.command-trigger:hover{border-color:var(--accent);color:var(--text);background:var(--surface)}
+.command-trigger svg{color:var(--accent)}.command-trigger kbd{border:1px solid var(--line);border-radius:5px;font-family:'DM Mono',monospace;font-size:9px;padding:3px 5px;color:var(--subtle);background:var(--bg)}
+.nav-menu a.current-section:not(.nav-contact){color:var(--accent)}
+.now-building{margin:-9px 0 28px;display:flex;align-items:center;gap:10px;min-height:27px;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.now-building strong{font-weight:500;color:var(--accent);min-width:115px}.now-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px rgba(101,222,191,.07)}.type-caret{display:inline-block;width:2px;height:13px;margin-left:-5px;background:var(--accent);animation:blink .9s steps(1) infinite}
+.editor-window{transition:transform .5s cubic-bezier(.2,.75,.1,1),box-shadow .35s;transform:translate(var(--hero-x,0px),var(--hero-y,0px)) rotate(-2deg)}
+.editor-window:hover{box-shadow:0 33px 85px rgba(0,0,0,.49),0 0 90px rgba(56,181,156,.12)}
+.editor-tabs{display:flex;align-items:center;gap:4px;flex:1;min-width:0;overflow:auto;scrollbar-width:none}.editor-tabs::-webkit-scrollbar{display:none}
+.editor-tab{background:transparent;border:1px solid transparent;border-radius:5px;padding:6px 6px;color:#7c9aab;font:inherit;font-size:9px;white-space:nowrap;transition:background .2s,color .2s}
+.editor-tab:hover{background:#213744;color:#f2fcf8}.editor-tab[aria-selected="true"]{background:#20313b;border-color:#375361;color:#a6ecdc}
+.editor-code{min-height:300px}.editor-code.panel-flash{animation:code-switch .26s ease-out}@keyframes code-switch{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.visual-hint{position:absolute;bottom:0;right:15px;font-family:'DM Mono',monospace;font-size:10px;color:var(--subtle);opacity:.8;letter-spacing:.25px;pointer-events:none}
+.visual-hint:before{content:'↳ ';color:var(--accent)}
+.floating-tech{pointer-events:none}
+.project-card{position:relative;isolation:isolate;transform-style:preserve-3d;transition:border-color .3s,box-shadow .3s,transform .32s cubic-bezier(.2,.8,.2,1)}
+.project-card.tilt-ready:hover{transform:perspective(1100px) rotateX(var(--rotate-x,0deg)) rotateY(var(--rotate-y,0deg)) translateY(-5px);box-shadow:0 18px 58px var(--shadow)}
+.project-card::after{content:'';position:absolute;z-index:-1;inset:0;border-radius:inherit;background:radial-gradient(410px circle at var(--card-x,50%) var(--card-y,20%),rgba(101,222,191,.075),transparent 68%);opacity:0;pointer-events:none;transition:opacity .3s}
+.project-card:hover::after{opacity:1}
+.project-card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.case-study{display:inline-flex;align-items:center;gap:12px;justify-content:space-between;width:fit-content;padding:11px 14px;margin-top:14px;border:1px solid rgba(101,222,191,.32);border-radius:8px;background:var(--accent-dark);color:var(--accent);font-size:12px;font-weight:700;transition:background .2s,transform .2s,border-color .2s}
+.case-study:hover{background:var(--surface);border-color:var(--accent);transform:translateY(-2px)}.case-study span:last-child{font-size:16px;font-weight:400}
+.project-info{display:flex;flex-direction:column;align-items:flex-start}
+.project-info .project-link{margin-top:auto}
+.project-info .case-study{margin-top:14px}
+.project-featured .case-study{margin-top:17px}
+.github-live{margin:35px 0 24px;padding:24px 25px 20px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(115deg,var(--card),var(--bg2));box-shadow:0 6px 36px rgba(0,0,0,.055);position:relative;overflow:hidden}
+.github-live:before{content:'';position:absolute;top:-100px;right:-20px;width:260px;height:260px;background:radial-gradient(circle,rgba(101,222,191,.09),transparent 70%);pointer-events:none}
+.github-live-main{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative}
+.github-live-identity{display:flex;align-items:center;gap:16px;min-width:0}
+.github-live-icon{width:54px;height:54px;flex:0 0 54px;background:var(--accent-dark);border:1px solid rgba(101,222,191,.24);border-radius:14px;display:grid;place-items:center;font-family:'DM Mono',monospace;font-size:16px;font-weight:500;color:var(--accent)}
+.github-kicker{display:block;color:var(--accent);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;margin-bottom:8px}
+.github-live-identity h3{font-size:21px;letter-spacing:-.6px;margin:0 0 5px}
+.github-live-identity p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.github-refresh{position:relative;z-index:1;display:inline-flex;align-items:center;gap:12px;padding:11px 16px;flex-shrink:0;background:var(--accent-dark);color:var(--accent);border:1px solid rgba(101,222,191,.35);border-radius:9px;font-size:12px;font-weight:700;transition:border-color .2s,background .2s}
+.github-refresh:hover{border-color:var(--accent);background:var(--surface)}.github-refresh:disabled{opacity:.6;cursor:wait}
+.refresh-mark{font-size:18px}.github-refresh.loading .refresh-mark{animation:spinner 1s linear infinite}@keyframes spinner{to{transform:rotate(360deg)}}
+.github-feed{margin-top:19px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.github-placeholder{grid-column:1/-1;color:var(--subtle);font-size:12px;margin:0;padding:15px 0}
+.github-fallback{color:var(--accent);font-weight:700;font-size:12px}
+.github-repo{min-width:0;display:flex;flex-direction:column;gap:9px;position:relative;border:1px solid var(--line);border-radius:10px;padding:18px 17px;background:var(--bg);transition:transform .2s,border-color .2s}
+.github-repo:hover{transform:translateY(-3px);border-color:var(--accent)}
+.github-repo strong{font-family:'Space Grotesk';font-size:14px;letter-spacing:-.25px;max-width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.github-repo span{font-size:11px;line-height:1.5;color:var(--muted);min-height:32px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.github-repo small{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent)}
+.github-repo b{position:absolute;top:17px;right:16px;color:var(--accent);font-size:16px}
+.github-disclaimer{display:block;color:var(--subtle);font-size:10px;margin-top:13px}
+.contact-quick{max-width:100%!important;color:#70bbaa!important;font-family:'DM Mono',monospace;font-size:10px!important;margin:20px 0 0!important}
+/* Modals and the command palette */
+.overlay-backdrop{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(3,10,17,.76);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;transition:opacity .2s}
+.overlay-backdrop.shown{opacity:1}
+.project-dialog,.palette-dialog{position:relative;width:min(100%,1000px);border:1px solid #38515b;background:var(--dialog-bg);color:var(--text);border-radius:20px;box-shadow:0 36px 120px rgba(0,0,0,.48);transform:translateY(14px) scale(.985);transition:transform .25s ease}
+.shown>.project-dialog,.shown>.palette-dialog{transform:translateY(0) scale(1)}
+.project-dialog{max-height:min(90vh,830px);overflow:auto;scrollbar-width:thin}
+.dialog-heading{display:flex;align-items:center;justify-content:space-between;padding:15px 24px;border-bottom:1px solid var(--line)}
+.dialog-eyebrow{font-family:'DM Mono',monospace;letter-spacing:2px;font-size:10px;color:var(--accent)}
+.dialog-close{width:36px;height:36px;display:grid;place-items:center;font-size:15px;color:var(--text);border:1px solid var(--line);background:transparent;border-radius:9px}
+.dialog-close:hover{background:var(--surface);border-color:var(--accent)}
+.dialog-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;min-height:500px}
+.dialog-art{min-width:0;background:#0b1822;display:grid;align-items:stretch;overflow:hidden;border-radius:0 0 0 20px}
+.dialog-art>.project-art{width:100%;height:100%!important;min-height:440px;position:relative;border-radius:0;margin:0}
+.dialog-art .project-art>.art-caption{bottom:16px}
+.dialog-art .fleet-mock{transform:rotate(-3deg) scale(.94)}
+.dialog-content{padding:37px 36px 34px;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.dialog-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.2px;color:var(--accent);padding:8px 10px;border:1px solid rgba(101,222,191,.25);border-radius:7px;background:var(--accent-dark)}
+.dialog-content h2{font-size:clamp(27px,3.2vw,43px);line-height:1.11;letter-spacing:-1.6px;margin:22px 0 14px}
+.dialog-content>p{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:25px}
+.dialog-section-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--accent);font-weight:500;text-transform:uppercase;margin:0 0 14px}
+.dialog-highlights{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:12px}
+.dialog-highlights li{font-size:12px;line-height:1.6;color:var(--text);display:flex;gap:10px}
+.dialog-highlights li:before{content:'↗';flex:0 0 14px;color:var(--accent)}
+.dialog-stack{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;margin-bottom:22px}
+.dialog-stack span{border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:7px 9px;font-family:'DM Mono',monospace;font-size:10px}
+.dialog-buttons{display:flex;gap:9px;flex-wrap:wrap}.dialog-buttons .button{font-size:11px;gap:12px;padding:10px 14px;min-height:43px}
+.palette-dialog{align-self:flex-start;width:min(100%,630px);margin-top:min(13vh,100px);max-height:min(72vh,720px);display:flex;flex-direction:column;overflow:hidden}
+.palette-head{display:flex;align-items:center;gap:13px;padding:15px 16px;border-bottom:1px solid var(--line);color:var(--accent)}
+.palette-head input{background:transparent;border:0;outline:0;flex:1;min-width:0;font-family:'DM Sans',sans-serif;color:var(--text);font-size:15px;padding:10px 0}
+.palette-head input::placeholder{color:var(--subtle)}.palette-esc{font-family:'DM Mono',monospace;font-size:10px;border:1px solid var(--line);border-radius:5px;padding:7px 9px;background:var(--surface);color:var(--muted)}
+.palette-results{overflow:auto;padding:10px;min-height:140px;scrollbar-width:thin}
+.palette-category{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--accent);margin:12px 12px 7px}
+.palette-item{width:100%;display:flex;align-items:center;gap:12px;text-align:left;color:var(--text);border:1px solid transparent;background:transparent;border-radius:9px;padding:11px 12px}
+.palette-item strong{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600}
+.palette-item small{font-family:'DM Mono',monospace;color:var(--subtle);font-size:10px;margin-left:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.palette-item span{color:var(--accent)}
+.palette-item:hover,.palette-item[aria-selected="true"]{background:var(--surface);border-color:var(--line)}
+.palette-empty{font-size:13px;line-height:1.8;color:var(--muted);padding:20px 13px}
+.palette-footer{border-top:1px solid var(--line);display:flex;gap:24px;padding:14px 20px;color:var(--muted);font-size:11px;flex-wrap:wrap}
+.palette-footer span{display:inline-flex;align-items:center;gap:5px}.palette-footer kbd{font-family:'DM Mono',monospace;font-size:10px;color:var(--text);border:1px solid var(--line);border-radius:5px;padding:4px 5px;background:var(--surface)}
+.toast{position:fixed;z-index:210;bottom:20px;right:22px;padding:12px 18px;border:1px solid rgba(101,222,191,.4);background:var(--surface);color:var(--text);border-radius:9px;font-size:12px;box-shadow:0 18px 34px var(--shadow);opacity:0;pointer-events:none;transform:translateY(10px);transition:all .3s}.toast.visible{opacity:1;transform:translateY(0)}
+.reveal-entry{opacity:0;transform:translateY(18px);transition:opacity .65s ease var(--stagger,0ms),transform .65s cubic-bezier(.25,.7,.25,1) var(--stagger,0ms)}
+.reveal-entry.is-revealed{opacity:1;transform:translateY(0)}
+/* Small-screen navigation and touch behaviour */
+@media(max-width:1220px){.command-trigger kbd{display:none}.command-trigger{padding:10px 11px}}
+@media(max-width:1050px){.command-trigger [data-dynamic="command"]{display:none}.command-trigger{width:38px;height:38px;justify-content:center;padding:0}.nav-menu{gap:15px}}
+@media(max-width:920px){.command-trigger{width:39px;height:39px}.github-feed{grid-template-columns:repeat(2,1fr)}.github-repo:last-child{grid-column:auto}.dialog-grid{grid-template-columns:.8fr 1.2fr}.dialog-content{padding:30px 25px}.dialog-art>.project-art{min-height:440px}}
+@media(max-width:650px){
+ .command-trigger{height:36px;width:36px}
+ .now-building{font-size:10px;margin-top:-11px;gap:7px}.now-building strong{min-width:100px}
+ .editor-titlebar{gap:5px}.editor-tab{font-size:8px;padding:6px 3px}.editor-branch{display:none}
+ .editor-code{min-height:0}.visual-hint{bottom:0;right:10px;font-size:9px}
+ .project-card.tilt-ready:hover{transform:none}
+ .github-live{padding:20px 17px;border-radius:13px}
+ .github-live-main{align-items:flex-start;flex-direction:column;gap:15px}
+ .github-live-identity{gap:12px}.github-live-icon{width:42px;height:42px;flex-basis:42px;font-size:13px;border-radius:11px}
+ .github-live-identity h3{font-size:18px}.github-live-identity p{font-size:11px}.github-refresh{width:100%;justify-content:center}
+ .github-feed{grid-template-columns:1fr}.github-repo{padding:15px}.github-repo span{min-height:0}
+ .overlay-backdrop{padding:10px;align-items:flex-end}
+ .project-dialog{max-height:92vh;border-radius:16px}.dialog-heading{padding:10px 16px}
+ .dialog-grid{display:flex;flex-direction:column}
+ .dialog-art{max-height:190px;min-height:160px;border-radius:0}
+ .dialog-art>.project-art{height:190px!important;min-height:190px}
+ .dialog-art .art-caption{display:none}
+ .dialog-content{padding:22px 22px 26px}
+ .dialog-content h2{font-size:30px;margin:15px 0 10px}
+ .dialog-content>p{font-size:12px;line-height:1.65;margin-bottom:18px}
+ .dialog-highlights{gap:8px;margin-bottom:15px}
+ .dialog-highlights li{font-size:11px}
+ .dialog-buttons{width:100%}.dialog-buttons .button{flex:1}
+ .palette-dialog{margin-top:8vh;align-self:flex-start;max-height:73vh;border-radius:14px}
+ .palette-head{padding:10px 12px;gap:9px}.palette-head input{font-size:13px}
+ .palette-item{padding:11px 9px}.palette-item small{max-width:110px}
+ .palette-footer{gap:10px;padding:11px 13px;font-size:9px}
+ .contact-quick{font-size:9px!important}
+}
+@media(max-width:400px){.dialog-art{display:none}.dialog-buttons .button{flex:1 1 100%}.palette-footer>span:last-child{display:none}.now-building strong{min-width:95px}}
+@media(prefers-reduced-motion:reduce){.reveal-entry{opacity:1;transform:none}.project-card.tilt-ready:hover{transform:none}.editor-window{transform:rotate(-2deg)!important}}
+/* Keep the typewriter caret immediately next to the typed text. */
+.now-building strong{min-width:0}
+@media(max-width:400px){
+ .dialog-art{display:grid;height:145px;min-height:145px;max-height:145px;flex:0 0 145px}
+ .dialog-art>.project-art{height:145px!important;min-height:145px}
+}
+
+
+/* === Ultron-inspired sci-fi redesign === */
+:root{
+  --bg:#06070a;
+  --bg2:#0b0d12;
+  --card:#10131a;
+  --surface:#171b23;
+  --text:#f3f4f8;
+  --muted:#a6adba;
+  --subtle:#727988;
+  --accent:#ff4659;
+  --accent-dark:rgba(255,70,89,.11);
+  --line:#272d38;
+  --code:#0c0f16;
+  --shadow:rgba(0,0,0,.5);
+  --header:rgba(6,7,10,.82);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f4f4f7;
+  --bg2:#ececf2;
+  --card:#ffffff;
+  --surface:#f4f5f9;
+  --text:#151821;
+  --muted:#4f5665;
+  --subtle:#7a8290;
+  --accent:#cb1737;
+  --accent-dark:rgba(203,23,55,.08);
+  --line:#d8dce4;
+  --code:#e7e9f0;
+  --shadow:rgba(14,16,22,.13);
+  --header:rgba(244,244,247,.85);
+  color-scheme:light;
+}
+body{
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,70,89,.14), transparent 26%),
+    radial-gradient(circle at 82% 13%, rgba(255,255,255,.04), transparent 20%),
+    radial-gradient(circle at 50% 80%, rgba(255,70,89,.08), transparent 30%),
+    linear-gradient(180deg, #05060a 0%, var(--bg) 24%, #090b10 100%);
+  position:relative;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(180deg, rgba(255,255,255,.015) 0 1px, transparent 1px 4px);
+  opacity:.28;
+  mix-blend-mode:soft-light;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,30%), rgba(255,70,89,.10), transparent 22%);
+  transition:background .12s linear;
+}
+.page-glow{
+  background:
+    radial-gradient(circle, rgba(255,70,89,.22) 0%, rgba(255,70,89,.06) 28%, transparent 70%);
+  filter:blur(50px);
+  opacity:.9;
+}
+.site-header{
+  border-bottom-color:rgba(255,70,89,.12);
+  box-shadow:0 18px 40px rgba(0,0,0,.16);
+}
+.brand-icon{
+  border-color:rgba(255,70,89,.55);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,70,89,.09));
+  box-shadow:0 0 0 1px rgba(255,255,255,.03) inset, 0 0 18px rgba(255,70,89,.18);
+  clip-path:polygon(18% 0,82% 0,100% 18%,100% 82%,82% 100%,18% 100%,0 82%,0 18%);
+}
+.brand-text span{letter-spacing:2.5px}
+.nav-menu>a.nav-contact,
+.lang-toggle,.icon-button,.command-trigger{
+  border-color:rgba(255,70,89,.15);
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,70,89,.02));
+}
+.lang-toggle:hover,.icon-button:hover,.command-trigger:hover,.nav-menu>a.nav-contact:hover{
+  border-color:rgba(255,70,89,.48);
+  box-shadow:0 0 0 1px rgba(255,70,89,.16) inset, 0 0 18px rgba(255,70,89,.08);
+}
+.eyebrow{
+  background:rgba(255,70,89,.08);
+  border-color:rgba(255,70,89,.24);
+  box-shadow:0 0 0 1px rgba(255,255,255,.02) inset;
+}
+.pulse-dot,.timeline-marker:before{
+  box-shadow:0 0 0 6px rgba(255,70,89,.12), 0 0 18px rgba(255,70,89,.42);
+}
+.hero-copy h1,.hero-role,.section h2,.about-grid h2,.contact-section h2{
+  text-shadow:0 0 22px rgba(255,70,89,.06);
+}
+.hero-role{letter-spacing:-1.8px}
+.hero-visual{
+  filter:drop-shadow(0 24px 44px rgba(0,0,0,.5));
+}
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  right:8%;
+  top:12%;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,84,103,.28) 0%, rgba(255,84,103,.12) 28%, rgba(255,84,103,.04) 48%, transparent 68%);
+  box-shadow:0 0 70px rgba(255,70,89,.16);
+  z-index:-1;
+}
+.hero-visual::after{
+  content:"AI // DEFENSE MATRIX";
+  position:absolute;
+  top:4px;
+  right:10px;
+  font:600 10px/1 'DM Mono', monospace;
+  letter-spacing:2.4px;
+  color:rgba(255,255,255,.35);
+  padding:8px 10px;
+  border:1px solid rgba(255,70,89,.18);
+  border-radius:999px;
+  background:rgba(7,10,14,.42);
+}
+.visual-grid{
+  opacity:.56;
+  background-image:
+    linear-gradient(rgba(255,70,89,.14) 1px,transparent 1px),
+    linear-gradient(90deg, rgba(255,70,89,.12) 1px,transparent 1px);
+}
+.visual-orbit{
+  border-color:rgba(255,70,89,.12);
+  box-shadow:inset 0 0 60px rgba(255,70,89,.04);
+}
+.orb-two{border-color:rgba(255,255,255,.05)}
+.editor-window{
+  background:linear-gradient(180deg, rgba(17,20,27,.92), rgba(9,11,16,.95));
+  border:1px solid rgba(255,70,89,.18);
+  box-shadow:0 28px 65px rgba(0,0,0,.56), 0 0 0 1px rgba(255,255,255,.03) inset;
+}
+.editor-window::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(135deg, rgba(255,255,255,.06), transparent 24%, transparent 74%, rgba(255,70,89,.07));
+}
+.editor-titlebar{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,70,89,.03));
+  border-bottom:1px solid rgba(255,70,89,.14);
+}
+.editor-tab[aria-selected="true"]{
+  color:var(--text);
+  background:rgba(255,70,89,.14);
+  border-color:rgba(255,70,89,.3);
+}
+.editor-footer,.visual-hint,.art-caption{background:rgba(9,11,16,.72);border-color:rgba(255,70,89,.14)}
+.floating-tech{
+  border-color:rgba(255,70,89,.18);
+  background:linear-gradient(180deg, rgba(19,23,31,.88), rgba(11,13,19,.92));
+  box-shadow:0 14px 30px rgba(0,0,0,.42);
+}
+.tech-symbol{
+  border-color:rgba(255,70,89,.25);
+  background:rgba(255,70,89,.08);
+  color:var(--accent);
+}
+.button{
+  border-radius:12px;
+  position:relative;
+  overflow:hidden;
+}
+.button::before{
+  content:"";
+  position:absolute;
+  inset:-120% auto auto -20%;
+  width:45%;
+  height:320%;
+  transform:rotate(18deg);
+  background:linear-gradient(180deg, transparent, rgba(255,255,255,.22), transparent);
+  transition:transform .5s ease;
+  opacity:.65;
+}
+.button:hover::before{transform:translateX(240%) rotate(18deg)}
+.button-primary{
+  background:linear-gradient(180deg, #ff6070, #ef3147);
+  border-color:#ff6070;
+  color:#fff;
+  box-shadow:0 14px 24px rgba(255,70,89,.18), inset 0 1px 0 rgba(255,255,255,.16);
+}
+.button-primary:hover{background:linear-gradient(180deg, #ff7080, #f03d53)}
+.button-secondary{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,70,89,.03));
+  border-color:rgba(255,70,89,.16);
+}
+.tech-marquee{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,70,89,.03));
+  border-color:rgba(255,70,89,.09);
+}
+.filter.active,.type-pill,.skill-icon,.dialog-tag,.section-label,
+.timeline-company,.about-facts span,.palette-category{
+  color:var(--accent);
+}
+.filter.active,.type-pill,.dialog-tag{
+  background:rgba(255,70,89,.09);
+  border-color:rgba(255,70,89,.24);
+}
+.project-card,.skill-panel,.github-live,.palette-dialog,.project-dialog{
+  background:linear-gradient(180deg, rgba(17,19,26,.96), rgba(10,12,17,.98));
+  border-color:rgba(255,255,255,.06);
+  box-shadow:0 18px 42px rgba(0,0,0,.28);
+}
+.project-card::before,.skill-panel::before,.github-live::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(135deg, rgba(255,255,255,.03), transparent 20%, transparent 78%, rgba(255,70,89,.05));
+}
+.project-card,.skill-panel,.github-live{position:relative;overflow:hidden}
+.project-card:hover,.skill-panel:hover,.github-repo:hover{
+  border-color:rgba(255,70,89,.38);
+  box-shadow:0 18px 46px rgba(0,0,0,.42), 0 0 0 1px rgba(255,70,89,.08) inset;
+}
+.project-card:hover .project-link{color:var(--accent)}
+.project-art::after{
+  content:"";
+  position:absolute;
+  inset:auto 10% 0;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,70,89,.35), transparent);
+}
+.about-section{
+  background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,70,89,.025));
+  border-block-color:rgba(255,70,89,.08);
+}
+.about-asterisk{color:var(--accent);text-shadow:0 0 16px rgba(255,70,89,.24)}
+.contact-panel{
+  background:linear-gradient(180deg, rgba(17,19,26,.96), rgba(11,13,19,.98));
+  border-color:rgba(255,70,89,.14);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+.palette-head,.dialog-heading,.timeline-content,.project-link,.editor-footer{border-color:rgba(255,255,255,.07)}
+.toast{
+  border-color:rgba(255,70,89,.35);
+  background:linear-gradient(180deg, rgba(17,19,26,.98), rgba(10,12,17,.98));
+}
+@media(max-width:650px){
+  .hero-visual::after{font-size:8px;padding:7px 9px;right:4px;top:-3px}
+  .brand-icon{clip-path:none;border-radius:10px}
+}
+</style><style data-source="ultron-polish.css">/* V4 — cohesive sci-fi interface. Original work, inspired by cinematic robotics HUDs. */
+:root{
+  --bg:#07090d;--bg2:#0d1017;--card:#12151d;--surface:#1a1e29;
+  --text:#f5f5f8;--muted:#b0b5c3;--subtle:#838a9b;
+  --accent:#ff4c63;--accent-dark:rgba(255,76,99,.12);
+  --line:#2a2e3a;--code:#0b0e15;--header:rgba(7,9,13,.9);
+  --shadow:rgba(0,0,0,.36);--soft-accent:rgba(255,76,99,.15);--dialog-bg:#10131a;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f4f5f8;--bg2:#e9ebf1;--card:#fff;--surface:#eef0f5;
+  --text:#1c202c;--muted:#51596a;--subtle:#697387;
+  --accent:#c51a37;--accent-dark:rgba(197,26,55,.09);
+  --line:#d1d5e0;--code:#11151e;--header:rgba(244,245,248,.92);
+  --shadow:rgba(18,24,41,.12);--soft-accent:rgba(197,26,55,.10);--dialog-bg:#fff;
+  color-scheme:light;
+}
+html{scroll-padding-top:88px}
+html:has(.has-overlay){overflow:hidden}
+body{background:#07090d;color:var(--text);}
+body::before{opacity:.18;background:repeating-linear-gradient(180deg,rgba(255,255,255,.02) 0 1px,transparent 1px 5px)}
+body::after{opacity:.65}
+html[data-theme="light"] body{
+  background:radial-gradient(circle at 25% 13%,rgba(223,71,97,.09),transparent 30%),var(--bg);
+}
+html[data-theme="light"] body::before{opacity:.08;mix-blend-mode:multiply}
+html[data-theme="light"] body::after{opacity:.14}
+::selection{background:var(--accent);color:#fff}
+.skip-link{color:#fff}
+:focus-visible{outline:2px solid var(--accent)!important;outline-offset:3px}
+[hidden]{display:none!important}
+.site-header{border-bottom:1px solid rgba(255,76,99,.15)}
+.nav{max-width:1260px}
+.brand-icon{background:#131720;clip-path:polygon(20% 0,80% 0,100% 20%,100% 80%,80% 100%,20% 100%,0 80%,0 20%);border:1px solid var(--accent);border-radius:0;color:#fff}
+.brand-icon span{color:#ff5c72}
+.brand-text{font-size:13px;letter-spacing:.1px}
+.brand-text span{font-size:9px;letter-spacing:2.7px}
+.nav-menu>a{font-size:12px;letter-spacing:.15px}
+.nav-menu>a.nav-contact{border-color:rgba(255,76,99,.24)}
+.nav-actions{gap:8px}
+.command-trigger,.lang-toggle,.icon-button{border:1px solid var(--line);background:var(--card);color:var(--text)}
+.command-trigger:hover,.lang-toggle:hover,.icon-button:hover{background:var(--accent-dark);border-color:rgba(255,76,99,.5)}
+.hero{max-width:1260px;grid-template-columns:1.02fr .98fr;min-height:730px;gap:60px;padding-top:100px;padding-bottom:85px}
+.hero::before{content:"";position:absolute;left:-7%;top:11%;width:600px;height:550px;z-index:0;pointer-events:none;background:radial-gradient(circle,rgba(255,44,77,.045),transparent 67%)}
+.hud-topline{position:absolute;top:35px;left:0;right:0;display:flex;justify-content:space-between;gap:16px;z-index:2;font:10px/1.3 'DM Mono',monospace;letter-spacing:2px;color:var(--subtle)}
+.hud-topline span:first-child::before{content:"▰";display:inline-block;color:var(--accent);margin-right:9px}
+.hero-copy{z-index:5}
+.eyebrow{margin-bottom:34px;color:var(--accent);border-color:rgba(255,76,99,.25);background:rgba(255,76,99,.07);letter-spacing:1.05px}
+.pulse-dot,.now-dot{box-shadow:0 0 0 4px rgba(255,76,99,.10),0 0 12px rgba(255,76,99,.3)}
+.hero-intro{font-size:11px;letter-spacing:4.8px;color:var(--subtle);font-weight:600}
+.hero h1{font-size:clamp(51px,5.3vw,82px);line-height:1.055;letter-spacing:-4.1px;max-width:720px}
+.hero h1 .surname{color:var(--text)}
+.hero h1 .punct{color:var(--accent);text-shadow:0 0 25px rgba(255,76,99,.36)}
+.hero-role{color:var(--text);font-size:clamp(24px,2.45vw,32px);letter-spacing:-1.15px}
+.hero-role .and{color:var(--accent)}
+.hero-description{color:var(--muted);font-size:15px;line-height:1.84;max-width:540px}
+.now-building{color:var(--subtle)}
+.now-building strong{color:var(--accent)}
+.hero-bottom{margin-top:50px}
+.hero-line{background:var(--accent)}
+.hero-bottom p{color:var(--subtle)}
+.button{border-radius:7px;min-height:52px;padding:14px 20px;gap:24px;box-shadow:none}
+.button-primary{background:linear-gradient(135deg,#f4445b,#cc183b);border:1px solid #ff6a7f;color:#fff;box-shadow:0 10px 25px rgba(233,48,78,.20)}
+.button-primary:hover{background:linear-gradient(135deg,#ff5a70,#d71b42);box-shadow:0 13px 30px rgba(233,48,78,.26)}
+.button-secondary{background:rgba(18,21,29,.7);border-color:#41434d;color:#f1f2f5}
+.button-secondary:hover{background:rgba(255,76,99,.09);border-color:var(--accent)}
+html[data-theme="light"] .button-secondary{color:var(--text);background:var(--card)}
+/* Reactor: an original, non-character graphic within the code station. */
+.hero-visual{height:510px;filter:drop-shadow(0 24px 52px rgba(0,0,0,.32))}
+.hero-visual::before{z-index:-3;right:4%;top:4%;width:450px;height:450px;background:radial-gradient(circle,rgba(237,37,68,.18) 0%,rgba(220,30,58,.08) 30%,transparent 65%)}
+.hero-visual::after{z-index:8;right:10px;top:4px;color:#b9a3ab;border-color:rgba(255,76,99,.32);font-size:9px;letter-spacing:1.5px}
+.reactor-field{position:absolute;width:450px;height:450px;right:2%;top:17px;pointer-events:none;z-index:-1;display:grid;place-items:center;filter:drop-shadow(0 0 15px rgba(247,39,69,.20))}
+.reactor-ring{position:absolute;border-radius:50%;border:1px solid rgba(255,76,99,.32)}
+.reactor-ring-outer{width:420px;height:420px;border-style:dashed;animation:reactor-spin 45s linear infinite}
+.reactor-ring-mid{width:345px;height:345px;border:2px solid rgba(255,76,99,.17);box-shadow:inset 0 0 30px rgba(255,76,99,.1),0 0 50px rgba(255,76,99,.09)}
+.reactor-ring-inner{width:265px;height:265px;border:5px double rgba(255,76,99,.27);border-left-color:transparent;border-right-color:transparent;animation:reactor-spin 19s linear infinite reverse}
+.reactor-core{width:160px;height:160px;border-radius:50%;border:1px solid rgba(255,89,113,.7);display:grid;place-items:center;background:radial-gradient(circle,rgba(255,76,99,.17) 1%,rgba(227,40,68,.045) 60%,transparent 75%);box-shadow:0 0 80px rgba(255,76,99,.22),inset 0 0 32px rgba(255,76,99,.18)}
+.reactor-core-light{display:block;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,#ffb4bd 0%,#ff647b 10%,#e7183b 42%,rgba(238,35,69,.08) 73%);box-shadow:0 0 35px rgba(255,76,99,.78),0 0 95px rgba(255,76,99,.4);animation:reactor-pulse 4s ease-in-out infinite}
+@keyframes reactor-spin{to{transform:rotate(360deg)}}
+@keyframes reactor-pulse{50%{transform:scale(1.12);box-shadow:0 0 55px rgba(255,76,99,.8),0 0 105px rgba(255,76,99,.45)}}
+.visual-grid{opacity:.35;background-image:linear-gradient(rgba(255,76,99,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(255,76,99,.13) 1px,transparent 1px)}
+.visual-orbit{border-color:rgba(255,76,99,.14)}
+.editor-window{z-index:3;top:104px;left:12px;right:4px;background:linear-gradient(155deg,rgba(15,18,26,.97),rgba(7,10,15,.98));border-color:rgba(255,76,99,.32);border-radius:9px;box-shadow:0 35px 68px rgba(0,0,0,.65),0 0 55px rgba(238,38,67,.10),inset 0 1px 0 rgba(255,255,255,.06);transform:translate(var(--hero-x,0px),var(--hero-y,0px)) rotate(-1.25deg)}
+.editor-window:hover{box-shadow:0 35px 70px rgba(0,0,0,.67),0 0 55px rgba(238,38,67,.15)}
+.editor-titlebar{background:#171b25;border-color:#31323e;color:#b8bdc7}
+.editor-tab{color:#a9adba}
+.editor-tab:hover{background:#252330;color:#fff}
+.editor-tab[aria-selected="true"]{background:#33202a;color:#ff95a2;border-color:#74323f}
+.editor-code{color:#bcc7d4}
+.editor-code em{color:#687183}
+.editor-code .kw{color:#bd9efb}
+.editor-code .fn{color:#f1c185}
+.editor-code .str{color:#ff94a8}
+.cursor{background:#ff506a}
+.editor-footer{background:#121620;color:#838d9e;border-color:#2f303a}
+.editor-branch,.signal-dot{color:#ff788e}
+.floating-tech{z-index:7;border-color:rgba(255,76,99,.28);background:rgba(18,21,30,.92);border-radius:10px;backdrop-filter:blur(9px)}
+.floating-tech strong{color:#f4f5f7}
+.floating-tech small{color:#a4adba}
+.tech-symbol{color:#ff6b80;border-color:rgba(255,76,99,.3);background:rgba(255,76,99,.12)}
+.visual-hint{color:#acb1bf}
+.tech-marquee{background:linear-gradient(90deg,rgba(255,76,99,.035),rgba(255,255,255,.015),rgba(255,76,99,.035));border-color:rgba(255,76,99,.11)}
+.marquee-inner span{color:var(--muted)}
+.marquee-inner i{background:var(--accent);box-shadow:0 0 14px rgba(255,76,99,.3)}
+.section-label{letter-spacing:2px}
+.section h2,.about-grid h2{letter-spacing:-2px}
+.section-head{margin-bottom:40px}
+.section-subtitle{color:var(--muted)}
+.filter{border-color:var(--line);color:var(--muted);border-radius:7px}
+.filter:hover,.filter.active{border-color:var(--accent)}
+.filter.active{background:var(--accent-dark);color:var(--accent)}
+.projects-grid{gap:20px}
+.project-card,.skill-panel{border-radius:11px;border:1px solid rgba(255,255,255,.085);background:var(--card);box-shadow:none;overflow:hidden}
+.project-card:hover,.project-card:focus-within,.skill-panel:hover{border-color:rgba(255,76,99,.44);box-shadow:0 20px 50px rgba(0,0,0,.28),0 0 22px rgba(255,76,99,.03)}
+.project-info{padding:29px 29px 28px}
+.project-info h3{letter-spacing:-.5px}
+.project-info p{color:var(--muted)}
+.type-pill{background:var(--accent-dark);border-color:rgba(255,76,99,.28);color:var(--accent);font-weight:600}
+.type-pill.type-dev{color:#e5bb83;border-color:rgba(231,186,124,.3);background:rgba(231,186,124,.08)}
+.tag-list span,.skill-tags span{border-color:var(--line);background:var(--surface);color:var(--muted)}
+.case-study{background:var(--accent-dark);border-color:rgba(255,76,99,.35);color:var(--accent);border-radius:6px}
+.case-study:hover{background:rgba(255,76,99,.17);border-color:var(--accent)}
+.project-card::after{background:radial-gradient(410px circle at var(--card-x,50%) var(--card-y,20%),rgba(255,76,99,.11),transparent 70%)}
+.github-live{background:var(--card);border-color:rgba(255,76,99,.2);border-radius:11px}
+.github-live::before{background:radial-gradient(circle,rgba(255,76,99,.10),transparent 70%)}
+.github-live-icon{background:var(--accent-dark);border-color:rgba(255,76,99,.3)}
+.github-refresh{background:var(--accent-dark);border-color:rgba(255,76,99,.34)}
+.github-repo{border-color:var(--line);background:var(--bg2)}
+.github-repo:hover{border-color:var(--accent)}
+.projects-footnote{color:var(--subtle)}
+.about-section{background:linear-gradient(180deg,var(--bg2),var(--bg));border-color:var(--line)}
+.about-right p{color:var(--muted)}
+.about-right .about-lead{color:var(--text)}
+.about-asterisk{color:var(--accent);text-shadow:0 0 42px rgba(255,76,99,.25)}
+.skill-icon{background:var(--accent-dark);border-color:rgba(255,76,99,.3);color:var(--accent)}
+.timeline-company{color:var(--accent)}
+.timeline-marker:before{box-shadow:0 0 0 5px rgba(255,76,99,.08),0 0 10px rgba(255,76,99,.2)}
+.contact-section{background:linear-gradient(115deg,#15131b,#0d1018 70%);border-color:rgba(255,76,99,.18);color:#f5f6f7}
+.contact-section::after{color:rgba(255,76,99,.075)}
+.contact-section h2 span{color:#ff5e76}
+.contact-section p{color:#aeb4c2}
+.contact-section .button-secondary{border-color:rgba(255,76,99,.3);background:rgba(255,255,255,.035);color:#f3f4f7}
+.contact-section .button-secondary:hover{background:rgba(255,76,99,.12)}
+.contact-section .email-address{color:#b3b8c4;text-decoration-color:#b04b60}
+.contact-quick{color:#cf9da9!important}
+.project-dialog,.palette-dialog{border:1px solid rgba(255,76,99,.25);background:var(--dialog-bg)}
+.overlay-backdrop{background:rgba(4,5,10,.83)}
+.dialog-art{background:#10131a}
+.dialog-tag{background:var(--accent-dark);border-color:rgba(255,76,99,.3)}
+.toast{border:1px solid rgba(255,76,99,.4);background:var(--card)}
+/* Light theme: make reading sections consistently light, keep code and project illustration surfaces dark. */
+html[data-theme="light"] .site-header{background:var(--header)}
+html[data-theme="light"] .hero-visual .editor-window,
+html[data-theme="light"] .hero-visual .floating-tech{color:#f5f5f8}
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .skill-panel,
+html[data-theme="light"] .github-live,
+html[data-theme="light"] .github-repo,
+html[data-theme="light"] .project-dialog,
+html[data-theme="light"] .palette-dialog{background:#fff;border-color:#d8dbe4}
+html[data-theme="light"] .project-card:hover,
+html[data-theme="light"] .skill-panel:hover{border-color:var(--accent);box-shadow:0 12px 35px rgba(35,40,58,.12)}
+html[data-theme="light"] .github-repo{background:#f5f5f8}
+html[data-theme="light"] .hero-visual .editor-window{background:linear-gradient(150deg,#141722,#090b10)}
+html[data-theme="light"] .contact-section{background:linear-gradient(115deg,#19141f,#0c1017)}
+html[data-theme="light"] .dialog-art{background:#161824}
+html[data-theme="light"] .overlay-backdrop{background:rgba(7,8,13,.75)}
+html[data-theme="light"] .brand-icon{color:#fff}
+html[data-theme="light"] .nav-menu{background:var(--bg2)}
+/* Mobile and motion safety */
+@media(max-width:1050px){
+  .hero{gap:28px}
+  .hero h1{font-size:clamp(51px,6vw,72px)}
+  .reactor-field{right:-2%}
+}
+@media(max-width:920px){
+  .hero{display:grid;grid-template-columns:1fr;gap:0;min-height:auto;padding-top:112px;padding-bottom:58px}
+  .hero-copy{max-width:740px}
+  .hero-visual{height:450px;margin-top:36px}
+  .reactor-field{right:6%;top:0}
+  .hud-topline{top:32px}
+  .nav-menu{background:var(--bg2);box-shadow:0 24px 36px rgba(0,0,0,.25)}
+}
+@media(max-width:650px){
+  .hero{padding-top:91px;padding-bottom:48px}
+  .hud-topline{top:22px;letter-spacing:1.1px;font-size:8px}
+  .hero h1{font-size:clamp(42px,10.7vw,62px);letter-spacing:-2.1px!important}
+  .hero-role{font-size:clamp(20px,5.3vw,28px)}
+  .hero-description{font-size:13.5px;line-height:1.82}
+  .hero-visual{height:370px;margin-top:28px}
+  .reactor-field{width:320px;height:320px;top:13px;right:calc(50% - 160px)}
+  .reactor-ring-outer{width:310px;height:310px}
+  .reactor-ring-mid{width:260px;height:260px}
+  .reactor-ring-inner{width:210px;height:210px}
+  .reactor-core{width:120px;height:120px}
+  .reactor-core-light{width:45px;height:45px}
+  .editor-window{left:5px;right:5px;top:76px!important}
+  .hero-visual::after{right:5px;font-size:8px}
+  .floating-tech.float-top{top:38px}
+  .floating-tech.float-bottom{bottom:1px}
+  .visual-hint{bottom:10px}
+  .project-info{padding:25px 23px}
+  .project-featured .project-info{padding:28px 24px}
+  .section h2,.about-grid h2{letter-spacing:-1.7px}
+  .tech-marquee{height:56px}
+  .contact-quick{font-size:9px!important}
+  .dialog-content{padding:24px 22px}
+}
+@media(max-width:380px){
+  .hud-topline span:last-child{display:none}
+  .hero-actions .button{width:100%}
+  .hero h1{font-size:43px}
+  .brand-text{display:none}
+  .hero-visual{height:355px}
+  .editor-code{font-size:8px;padding:17px 10px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal-entry{opacity:1!important;transform:none!important}
+  .editor-window{transform:none!important}
+  .reactor-ring,.reactor-core-light{animation:none!important}
+}
+</style></head>
+<body>
+<a class="skip-link" data-i18n="skip" href="#main">Ir para o conteúdo</a>
+<div aria-hidden="true" class="page-glow"></div>
+<div aria-hidden="true" class="progress" id="scroll-progress"></div>
+<header class="site-header">
+<nav aria-label="Navegação principal" class="nav shell" id="navigation">
+<a aria-label="Mateus Augusto — início" class="brand" href="#inicio">
+<span aria-hidden="true" class="brand-icon">M<span>/</span></span>
+<span class="brand-text">MATEUS<span>AUGUSTO.</span></span>
+</a>
+<div class="nav-menu" id="nav-menu">
+<a data-i18n="navProjects" href="#projetos">Projetos</a>
+<a data-i18n="navAbout" href="#sobre">Sobre</a>
+<a data-i18n="navSkills" href="#habilidades">Habilidades</a>
+<a data-i18n="navExperience" href="#experiencia">Experiência</a>
+<a class="nav-contact" data-i18n="navContact" href="#contato">Contato <span aria-hidden="true">↗</span></a>
+</div>
+<div class="nav-actions"><button aria-label="Abrir busca rápida e comandos" class="command-trigger" id="command-trigger" title="Buscar projetos e navegar" type="button"><svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="15"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg><span data-dynamic="command">Buscar</span><kbd>Ctrl K</kbd></button>
+<button aria-label="Switch language to English" class="lang-toggle" id="lang-toggle" title="Alternar idioma" type="button">EN <span aria-hidden="true">↗</span></button>
+<button aria-label="Ativar tema claro" class="icon-button theme-toggle" id="theme-toggle" title="Alternar tema" type="button">
+<svg aria-hidden="true" class="theme-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+</button>
+<button aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu" class="icon-button menu-toggle" id="menu-toggle" type="button">
+<svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24" width="21"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</nav>
+</header>
+<main id="main">
+<section aria-labelledby="hero-title" class="hero shell" id="inicio">
+<div aria-hidden="true" class="hud-topline"><span>MA // PORTFOLIO SYSTEM</span><span>INTERFACE / 04</span></div>
+<div class="hero-copy">
+<p class="eyebrow"><span class="pulse-dot"></span><span data-i18n="availability">Aberto a oportunidades remotas e internacionais</span></p>
+<p class="hero-intro" data-i18n="hello">OLÁ, EU SOU</p>
+<h1 id="hero-title">Mateus Augusto<span class="surname"> Felisbino<span class="punct">.</span></span></h1>
+<h2 class="hero-role" data-i18n="role">Software Developer <span class="and">&amp;</span> Game Developer</h2>
+<p class="hero-description" data-i18n="heroDescription">Desenvolvo experiências digitais e jogos independentes. Combino React, TypeScript e React Native com projetos em Unity e C#, sempre com foco em interfaces intuitivas, código organizado e evolução constante.</p><p aria-label="Áreas de atuação" class="now-building"><span aria-hidden="true" class="now-dot"></span><span data-dynamic="exploring">Explorando agora</span><strong aria-live="off" id="typewriter">Web Apps</strong><span aria-hidden="true" class="type-caret"></span></p>
+<div class="hero-actions">
+<a class="button button-primary" href="#projetos"><span data-i18n="seeProjects">Explorar projetos</span> <span aria-hidden="true">↗</span></a>
+<a class="button button-secondary" href="mailto:amateus593@gmail.com?subject=Contato%20via%20portf%C3%B3lio"><span data-i18n="talk">Vamos conversar</span> <span aria-hidden="true">↗</span></a>
+</div>
+<div aria-hidden="true" class="hud-corner hud-corner-l"></div><div class="hero-bottom">
+<span class="hero-line"></span>
+<p data-i18n="heroLocation">Baseado no Brasil <span aria-hidden="true">·</span> Disponível para atuação remota</p>
+</div>
+</div>
+<div aria-label="Visualização ilustrativa de código e tecnologias" class="hero-visual">
+<div aria-hidden="true" class="visual-grid"></div><div aria-hidden="true" class="reactor-field"><div class="reactor-ring reactor-ring-outer"></div><div class="reactor-ring reactor-ring-mid"></div><div class="reactor-ring reactor-ring-inner"></div><div class="reactor-core"><span class="reactor-core-light"></span></div></div>
+<div class="editor-window">
+<div class="editor-titlebar"><span class="editor-dots"><i></i><i></i><i></i></span><div aria-label="Exemplos de código" class="editor-tabs" role="tablist"><button aria-selected="true" class="editor-tab" data-editor-tab="about" role="tab" tabindex="0" type="button">about-me.tsx</button><button aria-selected="false" class="editor-tab" data-editor-tab="projects" role="tab" tabindex="-1" type="button">projects.json</button><button aria-selected="false" class="editor-tab" data-editor-tab="focus" role="tab" tabindex="-1" type="button">focus.ts</button></div><span class="editor-branch">◉ main</span></div>
+<div aria-label="Código ilustrativo" class="editor-code" id="editor-panel" role="tabpanel">
+<div><em>01</em> <span class="kw">const</span> <span class="fn">developer</span> = {</div>
+<div><em>02</em>  name: <span class="str">'Mateus Augusto'</span>,</div>
+<div><em>03</em>  focus: [</div>
+<div><em>04</em>   <span class="str">'Software Development'</span>,</div>
+<div><em>05</em>   <span class="str">'Game Development'</span></div>
+<div><em>06</em>  ],</div>
+<div><em>07</em>  stack: [<span class="str">'React'</span>, <span class="str">'C#'</span>, <span class="str">'Unity'</span>],</div>
+<div><em>08</em>  mindset: <span class="str">'keep building'</span></div>
+<div><em>09</em> };</div>
+<div class="code-gap"><em>10</em></div>
+<div><em>11</em> <span class="kw">export default</span> developer<span class="cursor"></span></div>
+</div>
+<div class="editor-footer"><span><span class="signal-dot"></span> Ready to build</span><span>UTF-8   TSX</span></div>
+</div>
+<div class="floating-tech float-top"><span class="tech-symbol">{ }</span><div><strong>React + TypeScript</strong><small>Web development</small></div></div>
+<div class="floating-tech float-bottom"><span class="tech-symbol unity-mark">◈</span><div><strong>Unity + C#</strong><small>2D &amp; 3D game systems</small></div></div>
+<div aria-hidden="true" class="visual-orbit orb-one"></div>
+<div aria-hidden="true" class="visual-orbit orb-two"></div>
+<div class="visual-hint" data-dynamic="editorHint">Clique nas abas para explorar</div></div>
+</section>
+<div aria-label="Tecnologias" class="tech-marquee"><div class="marquee-inner"><span>REACT</span><i></i><span>TYPESCRIPT</span><i></i><span>UNITY</span><i></i><span>C#</span><i></i><span>REACT NATIVE</span><i></i><span>JAVASCRIPT</span><i></i><span>LEAFLET</span><i></i><span>POSTGRESQL</span></div></div>
+<section aria-labelledby="projects-heading" class="section shell projects" id="projetos">
+<div class="section-head">
+<div><div class="section-label"><span class="label-index">01 /</span><span data-i18n="projectsLabel">PORTFÓLIO</span></div><h2 data-i18n="projectsHeading" id="projects-heading">Projetos <span>selecionados.</span></h2></div>
+<p class="section-subtitle" data-i18n="projectsDescription">Uma seleção de repositórios públicos verificados e projetos independentes em desenvolvimento.</p>
+</div>
+<div aria-label="Filtrar projetos" class="filter-bar" role="group">
+<button aria-pressed="true" class="filter active" data-filter="all" data-i18n="filterAll" type="button">Todos <span>05</span></button>
+<button aria-pressed="false" class="filter" data-filter="web" data-i18n="filterWeb" type="button">Web</button>
+<button aria-pressed="false" class="filter" data-filter="mobile" data-i18n="filterMobile" type="button">Mobile</button>
+<button aria-pressed="false" class="filter" data-filter="games" data-i18n="filterGames" type="button">Jogos</button>
+</div>
+<div class="projects-grid" id="projects-grid">
+<article aria-label="Fleet Tracker Dashboard, visualizar detalhes" class="project-card project-featured" data-category="web" data-project="fleet" tabindex="0">
+<div aria-label="Representação ilustrativa de um dashboard com mapa de rastreamento" class="project-art art-fleet">
+<div aria-hidden="true" class="fleet-mock">
+<div class="fleet-sidebar"><div class="fleet-logo"><span></span><span></span><span></span></div><b>◫</b><b>⌁</b><b>▦</b><b>⚙</b></div>
+<div class="fleet-main"><div class="fleet-header"><span>Fleet<span>Tracker</span></span><i class="fleet-small-dot"></i></div><div class="fleet-stats"><div><small>ONLINE</small><strong>● 24</strong></div><div><small>ON ROUTE</small><strong>18</strong></div><div><small>STATUS</small><strong>LIVE</strong></div></div><div class="fleet-map"><svg aria-hidden="true" preserveaspectratio="xMidYMid slice" viewbox="0 0 450 220"><path d="M-30 70L490 90M-30 180L490 10M20 -30L300 250M330 -10L90 250" fill="none" stroke="#334958" stroke-width="23"></path><path d="M-30 70L490 90M-30 180L490 10M20 -30L300 250M330 -10L90 250" fill="none" stroke="#486475" stroke-width="1.3"></path><path d="M32 181L112 145L190 162L248 98L358 117L440 62" fill="none" stroke="#61dcc9" stroke-dasharray="7 5" stroke-linecap="round" stroke-width="3.3"></path><circle cx="112" cy="145" fill="#61dcc9" r="9" stroke="#142b38" stroke-width="5"></circle><circle cx="248" cy="98" fill="#61dcc9" r="9" stroke="#142b38" stroke-width="5"></circle><circle cx="358" cy="117" fill="#eeb873" r="9" stroke="#142b38" stroke-width="5"></circle></svg><div class="map-legend"><span><i></i> Operating</span><span><i></i> Idle</span></div></div></div>
+</div>
+<span class="art-caption" data-i18n="illustrative">Visualização ilustrativa</span>
+</div>
+<div class="project-info"><div class="project-overline"><span class="type-pill" data-i18n="typePublic">REPOSITÓRIO PÚBLICO</span><span class="index">01 / 05</span></div><h3>Fleet Tracker Dashboard</h3><p data-i18n="fleetDescription">Dashboard de rastreamento operacional com mapa interativo, histórico de rotas, estados das unidades e indicadores dinâmicos. Dados simulados em JSON.</p><div class="tag-list"><span>React</span><span>TypeScript</span><span>Leaflet</span><span>Material UI</span></div><a class="project-link" href="https://github.com/MateusAugusto1/Proje" rel="noopener noreferrer" target="_blank"><span data-i18n="source">Ver código no GitHub</span><span aria-hidden="true">↗</span></a><button class="case-study" data-open-project="fleet" type="button"><span data-dynamic="caseStudy">Explorar detalhes</span><span aria-hidden="true">↗</span></button></div>
+</article>
+<article aria-label="Aplicativo de transporte, visualizar detalhes" class="project-card" data-category="mobile" data-project="transit" tabindex="0">
+<div class="project-art art-mobile"><div aria-hidden="true" class="phone"><div class="phone-camera"></div><div class="phone-screen"><div class="phone-title">Transit<span>Map</span></div><div class="phone-title-small">Routes near you</div><div class="phone-map"><svg preserveaspectratio="none" viewbox="0 0 220 210"><path d="M-20 40L250 90M-20 160L250 100M70 -20L150 240" stroke="#bdc9c5" stroke-width="20"></path><path d="M20 180C70 80 150 190 205 22" fill="none" stroke="#38b9ad" stroke-linecap="round" stroke-width="4"></path><circle cx="20" cy="180" fill="#38b9ad" r="9" stroke="#fff" stroke-width="4"></circle><circle cx="205" cy="22" fill="#38b9ad" r="9" stroke="#fff" stroke-width="4"></circle></svg></div><div class="phone-line"><span>◉</span><div><b>Line 01</b><small>View vehicles</small></div><i>→</i></div><div class="phone-line"><span>◉</span><div><b>Line 02</b><small>View vehicles</small></div><i>→</i></div></div></div><span class="art-caption" data-i18n="illustrative">Visualização ilustrativa</span></div>
+<div class="project-info"><div class="project-overline"><span class="type-pill" data-i18n="typePublic">REPOSITÓRIO PÚBLICO</span><span class="index">02 / 05</span></div><h3 data-i18n="transitTitle">Aplicativo de transporte</h3><p data-i18n="transitDescription">Protótipo mobile com navegação entre telas de linhas e veículos, desenvolvido com React Native e Expo.</p><div class="tag-list"><span>React Native</span><span>Expo</span><span>JavaScript</span><span>Maps</span></div><a class="project-link" href="https://github.com/MateusAugusto1/testee" rel="noopener noreferrer" target="_blank"><span data-i18n="source">Ver código no GitHub</span><span aria-hidden="true">↗</span></a><button class="case-study" data-open-project="transit" type="button"><span data-dynamic="caseStudy">Explorar detalhes</span><span aria-hidden="true">↗</span></button></div>
+</article>
+<article aria-label="Reino em Ruínas, visualizar detalhes" class="project-card" data-category="games" data-project="ruins" tabindex="0">
+<div class="project-art art-ruins"><svg aria-label="Ilustração abstrata de torres e caminhos em um jogo de estratégia" class="game-art" role="img" viewbox="0 0 500 270"><defs><lineargradient id="ruinsSky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#273044"></stop><stop offset="1" stop-color="#111b2a"></stop></lineargradient></defs><rect fill="url(#ruinsSky)" height="270" width="500"></rect><circle cx="385" cy="72" fill="#a8b8ca" opacity=".72" r="51"></circle><path d="M0 183L68 145L118 167L172 117L234 160L308 96L383 152L456 123L500 140V270H0Z" fill="#182634"></path><path d="M0 225L120 176L205 205L319 153L400 200L500 176V270H0Z" fill="#223648"></path><path d="M0 254L125 231L226 240L320 216L500 248V270H0Z" fill="#13212d"></path><path d="M95 228v-79l-17-18h79l-17 18v79M82 130v-22h66v22" fill="#738594" stroke="#a6b1b9" stroke-width="3"></path><rect fill="#4dd6c6" height="19" rx="6" width="12" x="111" y="165"></rect><path d="M322 216v-61l-20-17h82l-20 17v61M309 138v-19h69v19" fill="#566675" stroke="#a2b0b6" stroke-width="3"></path><path d="M344 164l-13 18h26z" fill="#e6ad73"></path><path d="M130 218C190 178 250 243 335 204S462 202 510 239" fill="none" opacity=".55" stroke="#d39a66" stroke-width="12"></path></svg><span class="art-caption" data-i18n="illustrative">Visualização ilustrativa</span></div>
+<div class="project-info"><div class="project-overline"><span class="type-pill type-dev" data-i18n="typeDev">EM DESENVOLVIMENTO</span><span class="index">03 / 05</span></div><h3>Reino em Ruínas</h3><p data-i18n="ruinsDescription">Tower defense 2D independente com evolução de torres, inimigos, chefes e sistemas de progressão para PC.</p><div class="tag-list"><span>Unity 2D</span><span>C#</span><span>PC</span><span>Strategy</span></div><span class="project-link project-unavailable"><span data-i18n="privateProject">Código não publicado</span><span aria-hidden="true">↗</span></span><button class="case-study" data-open-project="ruins" type="button"><span data-dynamic="caseStudy">Explorar detalhes</span><span aria-hidden="true">↗</span></button></div>
+</article>
+<article aria-label="AquaCare 3D, visualizar detalhes" class="project-card" data-category="games" data-project="aqua" tabindex="0">
+<div class="project-art art-aquacare"><svg aria-label="Ilustração estilizada de um aquário com peixes" class="game-art" role="img" viewbox="0 0 500 270"><defs><lineargradient id="aquaBg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0d4150"></stop><stop offset="1" stop-color="#132a40"></stop></lineargradient><lineargradient id="aquaGlass" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#38a9b2" stop-opacity=".52"></stop><stop offset="1" stop-color="#2b6f8a" stop-opacity=".22"></stop></lineargradient></defs><rect fill="url(#aquaBg)" height="270" width="500"></rect><rect fill="url(#aquaGlass)" height="214" rx="16" stroke="#7cdbd9" stroke-width="6" width="372" x="64" y="35"></rect><path d="M73 208q45-14 95 0t95-1t95 5t70-5v34H73Z" fill="#9b8872"></path><path d="M122 213Q90 178 120 123M122 206q26-30 7-84M363 210q-23-52 14-93M370 200q37-39 18-79" fill="none" stroke="#59c69a" stroke-linecap="round" stroke-width="9"></path><g fill="#ffa66e"><path d="M204 117q40-34 79 0q-39 37-79 0z"></path><path d="M201 117l-27-24v48z"></path><circle cx="265" cy="112" fill="#173849" r="4"></circle></g><g fill="#f4d48d"><path d="M321 174q-27-22-57 0q31 25 57 0z"></path><path d="M323 174l18-18v36z"></path><circle cx="275" cy="170" fill="#173849" r="3"></circle></g><g fill="#b3fff2" opacity=".48"><circle cx="154" cy="98" r="8"></circle><circle cx="162" cy="74" r="5"></circle><circle cx="352" cy="88" r="8"></circle><circle cx="361" cy="64" r="5"></circle></g></svg><span class="art-caption" data-i18n="illustrative">Visualização ilustrativa</span></div>
+<div class="project-info"><div class="project-overline"><span class="type-pill type-dev" data-i18n="typeDev">EM DESENVOLVIMENTO</span><span class="index">04 / 05</span></div><h3>AquaCare 3D</h3><p data-i18n="aquaDescription">Simulador estilizado de loja de aquários, com cuidados dos peixes, manutenção, customização e gestão.</p><div class="tag-list"><span>Unity 3D</span><span>C#</span><span>Android</span><span>Simulation</span></div><span class="project-link project-unavailable"><span data-i18n="privateProject">Código não publicado</span><span aria-hidden="true">↗</span></span><button class="case-study" data-open-project="aqua" type="button"><span data-dynamic="caseStudy">Explorar detalhes</span><span aria-hidden="true">↗</span></button></div>
+</article>
+<article aria-label="Interface de cadastro, visualizar detalhes" class="project-card project-login" data-category="web" data-project="login" tabindex="0">
+<div class="project-art art-login"><div aria-hidden="true" class="login-mock"><div class="login-orb"></div><h4>Welcome back</h4><p>Sign in to your account</p><div class="mock-input">✉   Email address</div><div class="mock-input">🔒   Password</div><div class="mock-button">Continue <span>→</span></div></div><span class="art-caption" data-i18n="illustrative">Visualização ilustrativa</span></div>
+<div class="project-info"><div class="project-overline"><span class="type-pill" data-i18n="typePublic">REPOSITÓRIO PÚBLICO</span><span class="index">05 / 05</span></div><h3 data-i18n="loginTitle">Interface de cadastro</h3><p data-i18n="loginDescription">Exercício de interface front-end com formulário, campos de entrada e estilização em HTML e CSS. Não inclui autenticação de backend.</p><div class="tag-list"><span>HTML</span><span>CSS</span><span>UI Design</span></div><a class="project-link" href="https://github.com/MateusAugusto1/Tela-de-login" rel="noopener noreferrer" target="_blank"><span data-i18n="source">Ver código no GitHub</span><span aria-hidden="true">↗</span></a><button class="case-study" data-open-project="login" type="button"><span data-dynamic="caseStudy">Explorar detalhes</span><span aria-hidden="true">↗</span></button></div>
+</article>
+</div>
+<div aria-label="Atividade pública do GitHub" class="github-live">
+<div class="github-live-main">
+<div class="github-live-identity"><span aria-hidden="true" class="github-live-icon">&lt;/&gt;</span><div><span class="github-kicker">GITHUB / PUBLIC API</span><h3 data-dynamic="githubHeading">Projetos que continuam evoluindo.</h3><p data-dynamic="githubDesc">Veja os repositórios públicos atualizados diretamente do meu GitHub, quando quiser.</p></div></div>
+<button class="github-refresh" id="github-refresh" type="button"><span aria-hidden="true" class="refresh-mark">↻</span><span data-dynamic="githubButton">Sincronizar GitHub</span></button>
+</div>
+<div aria-live="polite" class="github-feed" id="github-feed"><p class="github-placeholder" data-dynamic="githubPlaceholder">Clique para buscar as atualizações mais recentes.</p></div>
+<small class="github-disclaimer" data-dynamic="githubDisclaimer">Consulta opcional à API pública do GitHub; requer conexão com a internet.</small>
+</div>
+<p class="projects-footnote"><span aria-hidden="true">ⓘ</span> <span data-i18n="projectNote">As miniaturas são ilustrações criadas para este portfólio, não capturas reais dos aplicativos. Os projetos no GitHub podem ser consultados nos links indicados.</span></p>
+<div class="view-all"><a class="text-link" href="https://github.com/MateusAugusto1?tab=repositories" rel="noopener noreferrer" target="_blank"><span data-i18n="allGithub">Explorar meu GitHub completo</span> <span aria-hidden="true">↗</span></a></div>
+</section>
+<section aria-labelledby="about-heading" class="section about-section" id="sobre"><div class="shell about-grid"><div class="about-left"><div class="section-label"><span class="label-index">02 /</span><span data-i18n="aboutLabel">QUEM SOU</span></div><h2 data-i18n="aboutHeading" id="about-heading">Curiosidade que vira <span>código.</span></h2><div aria-hidden="true" class="about-art"><span class="big-bracket">{</span><span class="about-asterisk">✳</span><span class="big-bracket">}</span></div></div><div class="about-right"><p class="about-lead" data-i18n="aboutLead">Sou formado em Análise e Desenvolvimento de Sistemas pela UniCesumar e desenvolvo projetos pessoais nas áreas de software e jogos.</p><p data-i18n="aboutP1">Trabalho com interfaces web e aplicações mobile em React, TypeScript e JavaScript. Paralelamente, crio protótipos e sistemas de gameplay em Unity e C# sob a identidade independente Veltrix Studios.</p><p data-i18n="aboutP2">Minha trajetória anterior em operações e logística fortaleceu habilidades de organização, atenção a detalhes, uso de sistemas e colaboração entre equipes. Agora direciono esse repertório ao desenvolvimento de software.</p><div class="about-facts"><div><span data-i18n="degreeLabel">FORMAÇÃO</span><strong data-i18n="degreeValue">Análise e Desenvolvimento de Sistemas</strong><small>UniCesumar · 2022–2024</small></div><div><span data-i18n="locationLabel">LOCALIZAÇÃO</span><strong data-i18n="locationValue">Brasil</strong><small data-i18n="relocation">Aberto a oportunidades internacionais</small></div></div></div></div></section>
+<section aria-labelledby="skills-heading" class="section shell skills-section" id="habilidades"><div class="section-head"><div><div class="section-label"><span class="label-index">03 /</span><span data-i18n="skillsLabel">FERRAMENTAS</span></div><h2 data-i18n="skillsHeading" id="skills-heading">Tecnologias <span>que utilizo.</span></h2></div><p class="section-subtitle" data-i18n="skillsDescription">Ferramentas utilizadas em projetos independentes, estudos e experiências anteriores.</p></div><div class="skills-grid"><div class="skill-panel"><span class="skill-icon">&lt;/&gt;</span><h3 data-i18n="skillFrontend">Desenvolvimento web</h3><p data-i18n="skillFrontendDesc">Interfaces, componentes e aplicações web.</p><div class="skill-tags"><span>React</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></div><div class="skill-panel"><span class="skill-icon">▣</span><h3 data-i18n="skillMobile">Aplicações mobile</h3><p data-i18n="skillMobileDesc">Prototipação, navegação e experiência mobile.</p><div class="skill-tags"><span>React Native</span><span>Expo</span><span>Android</span></div></div><div class="skill-panel"><span class="skill-icon">✳</span><h3 data-i18n="skillGames">Desenvolvimento de jogos</h3><p data-i18n="skillGamesDesc">Gameplay, interfaces e sistemas independentes.</p><div class="skill-tags"><span>Unity 2D/3D</span><span>C#</span><span>Game Systems</span></div></div><div class="skill-panel"><span class="skill-icon">▤</span><h3 data-i18n="skillOther">Dados e ferramentas</h3><p data-i18n="skillOtherDesc">Bancos de dados, visualização e sistemas operacionais.</p><div class="skill-tags"><span>PostgreSQL</span><span>Power BI</span><span>SAP</span><span>Git</span></div></div></div></section>
+<section aria-labelledby="experience-heading" class="section shell experience" id="experiencia"><div class="section-head"><div><div class="section-label"><span class="label-index">04 /</span><span data-i18n="experienceLabel">TRAJETÓRIA</span></div><h2 data-i18n="experienceHeading" id="experience-heading">Experiência &amp; <span>formação.</span></h2></div><p class="section-subtitle" data-i18n="experienceDescription">Experiência operacional consolidada e evolução técnica através de projetos independentes.</p></div><div class="timeline"><div class="timeline-item"><div class="timeline-date">2024 — 2025</div><div class="timeline-marker"></div><div class="timeline-content"><h3 data-i18n="roleMelitta">Assistente de Logística</h3><span class="timeline-company">Melitta South America</span><p data-i18n="melittaDesc">Conferência de notas fiscais e mercadorias, registros em SAP e comunicação entre departamentos.</p></div></div><div class="timeline-item"><div class="timeline-date">2024</div><div class="timeline-marker"></div><div class="timeline-content"><h3 data-i18n="roleCeva">Conferente de Armazém</h3><span class="timeline-company">CEVA Logistics</span><p data-i18n="cevaDesc">Controle de estoque, verificação de documentos e apoio aos processos de qualidade.</p></div></div><div class="timeline-item"><div class="timeline-date">2017 — 2023</div><div class="timeline-marker"></div><div class="timeline-content"><h3 data-i18n="roleCooper">Operador de Produção</h3><span class="timeline-company">Cooper Standard</span><p data-i18n="cooperDesc">Operação de equipamentos industriais, identificação de falhas e cumprimento de procedimentos técnicos.</p></div></div><div class="timeline-item education-item"><div class="timeline-date">2022 — 2024</div><div class="timeline-marker"></div><div class="timeline-content"><h3 data-i18n="educationTitle">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3><span class="timeline-company">UniCesumar</span><p data-i18n="educationDesc">Graduação concluída. Base em programação, sistemas e desenvolvimento de software.</p></div></div></div></section>
+<section aria-labelledby="contact-heading" class="contact-section" id="contato"><div class="shell contact-inner"><div class="section-label"><span class="label-index">05 /</span><span data-i18n="contactLabel">VAMOS CONVERSAR</span></div><h2 data-i18n="contactHeading" id="contact-heading">Tem um projeto em mente?<br/><span>Vamos construir algo.</span></h2><p data-i18n="contactDescription">Estou aberto a conversar sobre oportunidades em desenvolvimento web, mobile, software e jogos — especialmente equipes que valorizam aprendizagem e colaboração.</p><div class="contact-actions"><a class="button button-primary" href="mailto:amateus593@gmail.com?subject=Oportunidade%20de%20trabalho"><span data-i18n="contactButton">Enviar um e-mail</span> <span aria-hidden="true">↗</span></a><button aria-label="Copiar endereço de e-mail" class="button button-secondary" id="copy-email" type="button"><span data-i18n="copyEmail">Copiar e-mail</span> <span aria-hidden="true">▣</span></button></div><a class="email-address" href="mailto:amateus593@gmail.com">amateus593@gmail.com</a><p aria-live="polite" class="visually-hidden" id="copy-status"></p><p class="contact-quick" data-dynamic="quickContact">Dica: use Ctrl + K para navegar rapidamente pelo portfólio.</p></div></section>
+</main>
+<footer class="footer"><div class="shell footer-inner"><a class="footer-brand" href="#inicio">M<span>/</span></a><span class="footer-note">© <span id="year">2026</span> Mateus Augusto Felisbino.</span><div class="footer-links"><a href="https://github.com/MateusAugusto1" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="mailto:amateus593@gmail.com">Email ↗</a><a data-i18n="backTop" href="#inicio">Voltar ao topo ↑</a></div></div></footer>
+<div class="overlay-backdrop" hidden="" id="project-overlay">
+<div aria-describedby="dialog-desc" aria-labelledby="dialog-title" aria-modal="true" class="project-dialog" role="dialog" tabindex="-1">
+<div class="dialog-heading"><span class="dialog-eyebrow" id="dialog-eyebrow">01 / PROJECT</span><button aria-label="Fechar detalhes" class="dialog-close" id="dialog-close" type="button">✕</button></div>
+<div class="dialog-grid"><div class="dialog-art" id="dialog-art"></div><div class="dialog-content">
+<span class="dialog-tag" id="dialog-tag">WEB / GITHUB</span><h2 id="dialog-title">Projeto</h2><p id="dialog-desc"></p>
+<h3 class="dialog-section-title" data-dynamic="dialogLearn">O que este projeto demonstra</h3><ul class="dialog-highlights" id="dialog-highlights"></ul>
+<div class="dialog-stack" id="dialog-stack"></div>
+<div class="dialog-buttons"><a class="button button-primary" href="#" id="dialog-link" rel="noopener noreferrer" target="_blank"><span data-dynamic="dialogCode">Ver repositório</span><span aria-hidden="true">↗</span></a><button class="button button-secondary" id="dialog-next" type="button"><span data-dynamic="dialogNext">Próximo projeto</span><span aria-hidden="true">→</span></button></div>
+</div></div>
+</div>
+</div>
+<div class="overlay-backdrop" hidden="" id="palette-overlay">
+<div aria-labelledby="palette-title" aria-modal="true" class="palette-dialog" role="dialog" tabindex="-1">
+<div class="palette-head"><svg aria-hidden="true" fill="none" height="19" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="19"><circle cx="10" cy="10" r="7"></circle><path d="m15.5 15.5 5 5"></path></svg><label class="visually-hidden" for="palette-input" id="palette-title">Busca rápida</label><input autocomplete="off" id="palette-input" placeholder="Buscar projeto ou seção..." type="search"/><button aria-label="Fechar busca" class="palette-esc" id="palette-close" type="button">ESC</button></div>
+<div aria-label="Resultados da busca" class="palette-results" id="palette-results" role="listbox"></div>
+<div class="palette-footer"><span><kbd>↑</kbd><kbd>↓</kbd> <span data-dynamic="paletteMove">Navegar</span></span><span><kbd>↵</kbd> <span data-dynamic="paletteOpen">Abrir</span></span><span><kbd>Esc</kbd> <span data-dynamic="paletteClose">Fechar</span></span></div>
+</div>
+</div>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script data-source="main.js">/* Personal portfolio - no build tools or external JS dependencies. */
+const translations = {
+  pt: {
+    skip: 'Ir para o conteúdo', navProjects: 'Projetos', navAbout: 'Sobre', navSkills: 'Habilidades', navExperience: 'Experiência', navContact: 'Contato <span aria-hidden="true">↗</span>',
+    availability: 'Aberto a oportunidades remotas e internacionais', hello: 'OLÁ, EU SOU', role: 'Software Developer <span class="and">&</span> Game Developer',
+    heroDescription: 'Desenvolvo experiências digitais e jogos independentes. Combino React, TypeScript e React Native com projetos em Unity e C#, sempre com foco em interfaces intuitivas, código organizado e evolução constante.',
+    seeProjects: 'Explorar projetos', talk: 'Vamos conversar', heroLocation: 'Baseado no Brasil <span aria-hidden="true">·</span> Disponível para atuação remota',
+    projectsLabel: 'PORTFÓLIO', projectsHeading: 'Projetos <span>selecionados.</span>', projectsDescription: 'Uma seleção de repositórios públicos verificados e projetos independentes em desenvolvimento.',
+    filterAll: 'Todos <span>05</span>', filterWeb: 'Web', filterMobile: 'Mobile', filterGames: 'Jogos', illustrative: 'Visualização ilustrativa', typePublic: 'REPOSITÓRIO PÚBLICO', typeDev: 'EM DESENVOLVIMENTO',
+    fleetDescription: 'Dashboard de rastreamento operacional com mapa interativo, histórico de rotas, estados das unidades e indicadores dinâmicos. Dados simulados em JSON.',
+    source: 'Ver código no GitHub', transitTitle: 'Aplicativo de transporte', transitDescription: 'Protótipo mobile com navegação entre telas de linhas e veículos, desenvolvido com React Native e Expo.',
+    ruinsDescription: 'Tower defense 2D independente com evolução de torres, inimigos, chefes e sistemas de progressão para PC.',
+    aquaDescription: 'Simulador estilizado de loja de aquários, com cuidados dos peixes, manutenção, customização e gestão.',
+    privateProject: 'Código não publicado', loginTitle: 'Interface de cadastro', loginDescription: 'Exercício de interface front-end com formulário, campos de entrada e estilização em HTML e CSS. Não inclui autenticação de backend.',
+    projectNote: 'As miniaturas são ilustrações criadas para este portfólio, não capturas reais dos aplicativos. Os projetos no GitHub podem ser consultados nos links indicados.',
+    allGithub: 'Explorar meu GitHub completo', aboutLabel: 'QUEM SOU', aboutHeading: 'Curiosidade que vira <span>código.</span>',
+    aboutLead: 'Sou formado em Análise e Desenvolvimento de Sistemas pela UniCesumar e desenvolvo projetos pessoais nas áreas de software e jogos.',
+    aboutP1: 'Trabalho com interfaces web e aplicações mobile em React, TypeScript e JavaScript. Paralelamente, crio protótipos e sistemas de gameplay em Unity e C# sob a identidade independente Veltrix Studios.',
+    aboutP2: 'Minha trajetória anterior em operações e logística fortaleceu habilidades de organização, atenção a detalhes, uso de sistemas e colaboração entre equipes. Agora direciono esse repertório ao desenvolvimento de software.',
+    degreeLabel: 'FORMAÇÃO', degreeValue: 'Análise e Desenvolvimento de Sistemas', locationLabel: 'LOCALIZAÇÃO', locationValue: 'Brasil', relocation: 'Aberto a oportunidades internacionais',
+    skillsLabel: 'FERRAMENTAS', skillsHeading: 'Tecnologias <span>que utilizo.</span>', skillsDescription: 'Ferramentas utilizadas em projetos independentes, estudos e experiências anteriores.',
+    skillFrontend: 'Desenvolvimento web', skillFrontendDesc: 'Interfaces, componentes e aplicações web.', skillMobile: 'Aplicações mobile', skillMobileDesc: 'Prototipação, navegação e experiência mobile.',
+    skillGames: 'Desenvolvimento de jogos', skillGamesDesc: 'Gameplay, interfaces e sistemas independentes.', skillOther: 'Dados e ferramentas', skillOtherDesc: 'Bancos de dados, visualização e sistemas operacionais.',
+    experienceLabel: 'TRAJETÓRIA', experienceHeading: 'Experiência & <span>formação.</span>', experienceDescription: 'Experiência operacional consolidada e evolução técnica através de projetos independentes.',
+    roleMelitta: 'Assistente de Logística', melittaDesc: 'Conferência de notas fiscais e mercadorias, registros em SAP e comunicação entre departamentos.',
+    roleCeva: 'Conferente de Armazém', cevaDesc: 'Controle de estoque, verificação de documentos e apoio aos processos de qualidade.',
+    roleCooper: 'Operador de Produção', cooperDesc: 'Operação de equipamentos industriais, identificação de falhas e cumprimento de procedimentos técnicos.',
+    educationTitle: 'Tecnólogo em Análise e Desenvolvimento de Sistemas', educationDesc: 'Graduação concluída. Base em programação, sistemas e desenvolvimento de software.',
+    contactLabel: 'VAMOS CONVERSAR', contactHeading: 'Tem um projeto em mente?<br><span>Vamos construir algo.</span>',
+    contactDescription: 'Estou aberto a conversar sobre oportunidades em desenvolvimento web, mobile, software e jogos — especialmente equipes que valorizam aprendizagem e colaboração.',
+    contactButton: 'Enviar um e-mail', copyEmail: 'Copiar e-mail', backTop: 'Voltar ao topo ↑', emailCopied: 'E-mail copiado para a área de transferência.', copyFailed: 'Não foi possível copiar. Use o link de e-mail.',
+    menuOpen: 'Abrir menu', menuClose: 'Fechar menu', themeLight: 'Ativar tema claro', themeDark: 'Ativar tema escuro', filterLabel: 'Filtrar projetos', navLabel: 'Navegação principal'
+  },
+  en: {
+    skip: 'Skip to content', navProjects: 'Projects', navAbout: 'About', navSkills: 'Skills', navExperience: 'Experience', navContact: 'Contact <span aria-hidden="true">↗</span>',
+    availability: 'Open to remote and international opportunities', hello: 'HI, I AM', role: 'Software Developer <span class="and">&</span> Game Developer',
+    heroDescription: 'I build digital experiences and independent games. My work brings together React, TypeScript and React Native with Unity and C# projects, with a focus on intuitive interfaces, organized code and continuous growth.',
+    seeProjects: 'Explore projects', talk: 'Get in touch', heroLocation: 'Based in Brazil <span aria-hidden="true">·</span> Available for remote roles',
+    projectsLabel: 'PORTFOLIO', projectsHeading: 'Selected <span>projects.</span>', projectsDescription: 'A selection of verified public repositories and independent projects in development.',
+    filterAll: 'All <span>05</span>', filterWeb: 'Web', filterMobile: 'Mobile', filterGames: 'Games', illustrative: 'Illustrative mockup', typePublic: 'PUBLIC REPOSITORY', typeDev: 'IN DEVELOPMENT',
+    fleetDescription: 'Operations tracking dashboard with an interactive map, route history, equipment status and dynamic indicators. Uses simulated JSON data.',
+    source: 'View code on GitHub', transitTitle: 'Transit mobile app', transitDescription: 'Mobile prototype featuring navigation between transit lines and vehicles, built with React Native and Expo.',
+    ruinsDescription: 'Independent 2D tower defense with tower upgrades, enemies, bosses and progression systems for PC.',
+    aquaDescription: 'Stylized aquarium shop simulator with fish care, tank maintenance, customization and management.',
+    privateProject: 'Code not publicly available', loginTitle: 'Registration interface', loginDescription: 'Front-end UI exercise featuring a form, input fields and HTML/CSS styling. Does not include backend authentication.',
+    projectNote: 'Project thumbnails are illustrations created for this portfolio, not actual application screenshots. Public GitHub projects can be inspected using the links provided.',
+    allGithub: 'Browse my full GitHub profile', aboutLabel: 'ABOUT ME', aboutHeading: 'Curiosity turned into <span>code.</span>',
+    aboutLead: 'I hold a degree in Systems Analysis and Development from UniCesumar and build personal software and game projects.',
+    aboutP1: 'I work with web interfaces and mobile applications using React, TypeScript and JavaScript. I also create gameplay prototypes and systems in Unity and C# under my independent Veltrix Studios identity.',
+    aboutP2: 'My previous experience in operations and logistics strengthened my organization, attention to detail, systems literacy and cross-functional communication. I now bring that background into software development.',
+    degreeLabel: 'EDUCATION', degreeValue: 'Systems Analysis and Development', locationLabel: 'LOCATION', locationValue: 'Brazil', relocation: 'Open to international opportunities',
+    skillsLabel: 'TOOLKIT', skillsHeading: 'Technologies <span>I work with.</span>', skillsDescription: 'Tools used in independent projects, learning and previous roles.',
+    skillFrontend: 'Web development', skillFrontendDesc: 'Interfaces, components and web applications.', skillMobile: 'Mobile applications', skillMobileDesc: 'Prototyping, navigation and mobile UX.',
+    skillGames: 'Game development', skillGamesDesc: 'Gameplay, UI and independent game systems.', skillOther: 'Data & tools', skillOtherDesc: 'Databases, visualization and operational systems.',
+    experienceLabel: 'BACKGROUND', experienceHeading: 'Experience & <span>education.</span>', experienceDescription: 'An operations background combined with hands-on learning through independent development projects.',
+    roleMelitta: 'Logistics Assistant', melittaDesc: 'Invoice and goods verification, SAP records and communication across departments.',
+    roleCeva: 'Warehouse Checker', cevaDesc: 'Inventory control, document verification and support for quality routines.',
+    roleCooper: 'Production Operator', cooperDesc: 'Industrial equipment operation, fault identification and technical procedure compliance.',
+    educationTitle: 'Degree in Systems Analysis and Development', educationDesc: 'Completed degree. Foundations in programming, systems and software development.',
+    contactLabel: 'LET’S TALK', contactHeading: 'Have a project in mind?<br><span>Let’s build something.</span>',
+    contactDescription: 'I am open to discussing opportunities in web, mobile, software and game development, especially with teams that value learning and collaboration.',
+    contactButton: 'Send an email', copyEmail: 'Copy email', backTop: 'Back to top ↑', emailCopied: 'Email copied to clipboard.', copyFailed: 'Could not copy. Please use the email link.',
+    menuOpen: 'Open menu', menuClose: 'Close menu', themeLight: 'Activate light theme', themeDark: 'Activate dark theme', filterLabel: 'Filter projects', navLabel: 'Main navigation'
+  }
+};
+const store = {
+  getItem(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
+  setItem(key, value) { try { window.localStorage.setItem(key, value); } catch { /* Storage is optional */ } }
+};
+const doc = document.documentElement;
+const langToggle = document.getElementById('lang-toggle');
+const themeToggle = document.getElementById('theme-toggle');
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('nav-menu');
+const filters = document.querySelectorAll('[data-filter]');
+const projectCards = document.querySelectorAll('.project-card[data-category]');
+let lang = store.getItem('mateus-portfolio-lang') === 'en' ? 'en' : 'pt';
+let theme = store.getItem('mateus-portfolio-theme') === 'light' ? 'light' : 'dark';
+let menuOpen = false;
+function updateAccessibility() {
+  const t = translations[lang];
+  menuToggle.setAttribute('aria-label', menuOpen ? t.menuClose : t.menuOpen);
+  themeToggle.setAttribute('aria-label', theme === 'dark' ? t.themeLight : t.themeDark);
+  document.getElementById('navigation').setAttribute('aria-label', t.navLabel);
+  document.querySelector('.filter-bar').setAttribute('aria-label', t.filterLabel);
+  document.getElementById('copy-email').setAttribute('aria-label', t.copyEmail);
+}
+function setLanguage(next) {
+  lang = next; doc.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const translation = translations[lang][el.dataset.i18n];
+    if (translation !== undefined) el.innerHTML = translation; // trusted local literal strings only
+  });
+  document.title = lang === 'pt' ? 'Mateus Augusto | Desenvolvedor de Software & Jogos' : 'Mateus Augusto | Software & Game Developer';
+  document.getElementById('meta-description').setAttribute('content', lang === 'pt' ?
+    'Portfólio de Mateus Augusto Felisbino. Projetos em React, TypeScript, React Native, Unity e C#.' :
+    'Portfolio of Mateus Augusto Felisbino. Projects in React, TypeScript, React Native, Unity and C#.');
+  document.getElementById('og-description').setAttribute('content',lang === 'pt' ? 'Projetos reais em React, TypeScript e React Native, além de jogos independentes em Unity e C#.' : 'Public React, TypeScript and React Native projects plus independent Unity and C# games.');
+  langToggle.innerHTML = lang === 'pt' ? 'EN <span aria-hidden="true">↗</span>' : 'PT <span aria-hidden="true">↗</span>';
+  langToggle.setAttribute('aria-label', lang === 'pt' ? 'Switch to English' : 'Mudar para português');
+  store.setItem('mateus-portfolio-lang',lang);
+  updateAccessibility();
+  document.dispatchEvent(new CustomEvent('portfolio:language', {detail: {lang}}));
+}
+function setTheme(next) {
+  theme = next; doc.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').setAttribute('content',theme === 'dark' ? '#07090d' : '#f4f5f8');
+  store.setItem('mateus-portfolio-theme',theme);
+  updateAccessibility();
+}
+function setMenu(open) {
+  menuOpen = open; menu.classList.toggle('open',open); menuToggle.setAttribute('aria-expanded',String(open)); updateAccessibility();
+}
+langToggle.addEventListener('click',()=>setLanguage(lang === 'pt' ? 'en' : 'pt'));
+themeToggle.addEventListener('click',()=>setTheme(theme === 'dark' ? 'light' : 'dark'));
+menuToggle.addEventListener('click',()=>setMenu(!menuOpen));
+menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',event=>{if(event.key === 'Escape') setMenu(false);});
+filters.forEach(button=>button.addEventListener('click',()=>{
+  const selected = button.dataset.filter;
+  filters.forEach(filter=>{let active = filter===button;filter.classList.toggle('active',active);filter.setAttribute('aria-pressed',String(active));});
+  projectCards.forEach(card=>{ card.hidden = selected!=='all' && card.dataset.category!==selected; });
+}));
+document.getElementById('copy-email').addEventListener('click',async()=>{
+  const status = document.getElementById('copy-status');
+  try { if(!navigator.clipboard) throw new Error('Clipboard unavailable'); await navigator.clipboard.writeText('amateus593@gmail.com'); status.textContent=translations[lang].emailCopied; }
+  catch { status.textContent=translations[lang].copyFailed; }
+  const btn=document.getElementById('copy-email'); btn.querySelector('[data-i18n]').textContent=status.textContent;
+  window.clearTimeout(window._copyResetTimeout);
+  window._copyResetTimeout = window.setTimeout(() => {btn.querySelector('[data-i18n]').textContent = translations[lang].copyEmail;}, 2400);
+  btn.blur();
+});
+const progress = document.getElementById('scroll-progress');
+let ticking = false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){requestAnimationFrame(()=>{
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width=(total>0 ? (window.scrollY/total)*100 : 0)+'%';ticking=false;
+  });ticking=true;}
+},{passive:true});
+document.getElementById('year').textContent=new Date().getFullYear();
+setTheme(theme);setLanguage(lang);
+</script><script data-source="enhancements.js">/* Portfolio interactive edition: browser-native JavaScript, no build or API keys required. */
+(() => {
+  'use strict';
+  const qs = (selector, root = document) => root.querySelector(selector);
+  const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const motion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const byId = id => document.getElementById(id);
+  const isEnglish = () => document.documentElement.lang.toLowerCase().startsWith('en');
+  const locale = () => isEnglish() ? 'en' : 'pt';
+  const text = (id, value) => { const el = byId(id); if(el) el.textContent = value; };
+  const labels = {
+    pt: {
+      command:'Buscar', exploring:'Explorando agora', editorHint:'Experimente as abas do código', caseStudy:'Explorar detalhes',
+      githubHeading:'O código continua evoluindo.',githubDesc:'Confira os repositórios públicos mais recentes, diretamente do GitHub.',
+      githubButton:'Sincronizar GitHub',githubPlaceholder:'Clique para buscar as atualizações mais recentes.',
+      githubDisclaimer:'Consulta opcional à API pública do GitHub. É necessária conexão com a internet.',
+      dialogLearn:'O que este projeto demonstra',dialogCode:'Ver repositório',dialogNext:'Próximo projeto',
+      paletteMove:'Navegar',paletteOpen:'Abrir',paletteClose:'Fechar',quickContact:'Dica: pressione Ctrl + K para navegar pelo site sem usar o mouse.',
+      searchPlaceholder:'Buscar projeto, tecnologia ou seção...',repoUnavailable:'Projeto independente · sem repositório público',
+      project:'PROJETO',open:'Abrir',section:'NAVEGAÇÃO',openProject:'PROJETOS',other:'AÇÕES',
+      noResults:'Nenhum resultado. Tente React, Unity, GitHub ou Contato.',
+      githubLoading:'Consultando repositórios públicos...',githubError:'Não foi possível acessar o GitHub agora. Use o link abaixo para consultar diretamente.',
+      githubEmpty:'Nenhum repositório público retornado.',githubVisit:'Abrir GitHub',githubUpdated:'Atualizado',
+      githubReady:'Repositórios atualizados',close:'Fechar detalhes',noCode:'Código ainda não publicado',
+      sourceInfo:'Projeto com código público disponível',developing:'Projeto independente em desenvolvimento',
+      syncSuccess:'Repositórios carregados do GitHub',syncFailed:'Não foi possível atualizar agora',
+      relatedSearch:'Explorar projetos',cmdDescription:'Abrir busca rápida (Ctrl + K)',detailLabel:'Visualizar detalhes de',
+      switches:['Web Apps','Game Systems','Mobile Experiences','Creative Coding']
+    },
+    en: {
+      command:'Search',exploring:'Currently exploring',editorHint:'Click the code tabs to explore',caseStudy:'Explore details',
+      githubHeading:'The code keeps evolving.',githubDesc:'Fetch recent public repositories directly from GitHub.',
+      githubButton:'Sync GitHub',githubPlaceholder:'Click to load the latest public updates.',
+      githubDisclaimer:'Optional public GitHub API request; internet connection required.',
+      dialogLearn:'What this project demonstrates',dialogCode:'View repository',dialogNext:'Next project',
+      paletteMove:'Navigate',paletteOpen:'Open',paletteClose:'Close',quickContact:'Tip: press Ctrl + K to navigate this site without using your mouse.',
+      searchPlaceholder:'Search projects, tech stack or sections...',repoUnavailable:'Independent project · no public repository',
+      project:'PROJECT',open:'Open',section:'NAVIGATION',openProject:'PROJECTS',other:'ACTIONS',
+      noResults:'No matches. Try React, Unity, GitHub or Contact.',
+      githubLoading:'Loading public repositories...',githubError:'Could not reach GitHub right now. Use the link below to browse directly.',
+      githubEmpty:'No public repositories returned.',githubVisit:'Open GitHub',githubUpdated:'Updated',
+      githubReady:'Repositories loaded',close:'Close details',noCode:'Code not published yet',
+      sourceInfo:'Public source code available',developing:'Independent project in development',
+      syncSuccess:'GitHub repositories loaded',syncFailed:'Could not fetch updates',
+      relatedSearch:'Explore projects',cmdDescription:'Open quick search (Ctrl + K)',detailLabel:'Explore details of',
+      switches:['Web Apps','Game Systems','Mobile Experiences','Creative Coding']
+    }
+  };
+  const tr = key => labels[locale()][key];
+  const projectDetails = {
+    fleet: {
+      title:'Fleet Tracker Dashboard', category:'web', tags:['React','TypeScript','Material UI','Leaflet'],
+      github:'https://github.com/MateusAugusto1/Proje',
+      pt:{label:'WEB · PROJETO PÚBLICO',desc:'Dashboard de rastreamento operacional que combina visualização geográfica com interface de acompanhamento de equipamentos e rotas. Projeto presente no meu GitHub.',items:['Componentização e construção de interfaces com React e TypeScript.','Representação de informações geográficas e rotas usando Leaflet.','Organização visual de informações e indicadores operacionais.']},
+      en:{label:'WEB · PUBLIC REPOSITORY',desc:'Operations-tracking dashboard that combines geographic visualization with an interface for monitoring equipment and routes. The project is available on my GitHub.',items:['Component-driven interfaces with React and TypeScript.','Geographic information and route visualization using Leaflet.','Visual organization of operational information and indicators.']}
+    },
+    transit: {
+      title:'Transit Mobile App', category:'mobile',tags:['React Native','Expo','JavaScript','Mobile UI'],
+      github:'https://github.com/MateusAugusto1/testee',
+      pt:{label:'MOBILE · PROJETO PÚBLICO',desc:'Protótipo de aplicativo móvel de transporte, com navegação entre linhas e veículos e exploração de interfaces mobile.',items:['Estrutura de telas e rotas com React Native e Expo.','Prática de componentes reutilizáveis e navegação.','Exploração de bibliotecas de mapas no ambiente mobile.']},
+      en:{label:'MOBILE · PUBLIC REPOSITORY',desc:'Transit-focused mobile app prototype, featuring navigation between lines and vehicles and experimentation with mobile interfaces.',items:['Screen and navigation structure with React Native and Expo.','Reusable components and navigation practice.','Exploration of map libraries for mobile interfaces.']}
+    },
+    ruins: {
+      title:'Reino em Ruínas',category:'games',tags:['Unity 2D','C#','Tower Defense','PC'],github:null,
+      pt:{label:'GAMES · EM DESENVOLVIMENTO',desc:'Projeto independente de tower defense em fantasia sombria para PC. Explora progressão de torres, inimigos, chefes, habilidades e interface de loja.',items:['Mecânicas de estratégia e evolução de torres.','Organização modular de sistemas de gameplay em C#.','Design de interfaces e fluxos de progressão.']},
+      en:{label:'GAMES · IN DEVELOPMENT',desc:'Independent dark-fantasy tower-defense project for PC. Explores tower progression, enemies, bosses, abilities and in-game shop interfaces.',items:['Tower-defense mechanics and upgrade progression.','Modular gameplay system organization in C#.','Interface design and progression flows.']}
+    },
+    aqua: {
+      title:'AquaCare 3D',category:'games',tags:['Unity 3D','C#','Android','Simulation'],github:null,
+      pt:{label:'GAMES · EM DESENVOLVIMENTO',desc:'Simulador estilizado de uma loja de aquários para Android. O projeto une cuidados de peixes, manutenção de tanques e gestão.',items:['Sistemas interconectados de cuidados, manutenção e recursos.','Design de feedback visual e progressão de um simulador.','Foco em interface e desempenho para dispositivos Android.']},
+      en:{label:'GAMES · IN DEVELOPMENT',desc:'Stylized aquarium-shop simulation for Android, combining fish care, tank maintenance and management mechanics.',items:['Connected simulation systems for care, maintenance and resources.','Visual feedback and progression design for a simulator.','Attention to interface and performance on Android devices.']}
+    },
+    login: {
+      title:'Registration UI',category:'web',tags:['HTML','CSS','UI Design'],github:'https://github.com/MateusAugusto1/Tela-de-login',
+      pt:{label:'WEB · PROJETO PÚBLICO',desc:'Exercício prático de desenvolvimento front-end, com foco em composição visual de formulário e fundamentos de estilização. Não inclui autenticação real.',items:['Criação de layout com HTML e CSS.','Composição visual de campos e botões.','Prática de hierarquia de informações para uma tela de entrada.']},
+      en:{label:'WEB · PUBLIC REPOSITORY',desc:'Front-end practice project focused on visual form composition and styling fundamentals. It does not include real authentication.',items:['Layout creation using HTML and CSS.','Visual composition of inputs and buttons.','Information hierarchy practice for a sign-in interface.']}
+    }
+  };
+  const projectIds = Object.keys(projectDetails);
+  const navigation = [
+    {id:'inicio',pt:'Início',en:'Home'},
+    {id:'projetos',pt:'Projetos',en:'Projects'},
+    {id:'sobre',pt:'Sobre',en:'About'},
+    {id:'habilidades',pt:'Habilidades',en:'Skills'},
+    {id:'experiencia',pt:'Experiência',en:'Experience'},
+    {id:'contato',pt:'Contato',en:'Contact'}
+  ];
+
+  // Editor: clickable, keyboard-operable code snippets. All snippets are illustrative.
+  const editorSamples = {
+    about:[
+      `<span class="kw">const</span> <span class="fn">developer</span> = {`,
+      `&nbsp;name: <span class="str">'Mateus Augusto'</span>,`,
+      `&nbsp;focus: [`,
+      `&nbsp;&nbsp;<span class="str">'Software Development'</span>,`,
+      `&nbsp;&nbsp;<span class="str">'Game Development'</span>`,
+      `&nbsp;],`,
+      `&nbsp;stack: [<span class="str">'React'</span>, <span class="str">'C#'</span>, <span class="str">'Unity'</span>],`,
+      `&nbsp;mindset: <span class="str">'keep building'</span>`,
+      `};`,
+      ``,
+      `<span class="kw">export default</span> developer<span class="cursor"></span>`
+    ],
+    projects:[
+      `<span class="str">"selectedProjects"</span>: [`,
+      `&nbsp;{ <span class="fn">name</span>: <span class="str">"Fleet Tracker"</span>,`,
+      `&nbsp;&nbsp;type: <span class="str">"React + TypeScript"</span> },`,
+      `&nbsp;{ <span class="fn">name</span>: <span class="str">"Reino em Ruínas"</span>,`,
+      `&nbsp;&nbsp;type: <span class="str">"Unity 2D + C#"</span> },`,
+      `&nbsp;{ <span class="fn">name</span>: <span class="str">"AquaCare 3D"</span>,`,
+      `&nbsp;&nbsp;type: <span class="str">"Unity 3D + C#"</span> }`,
+      `]`,
+      ``,
+      `<span class="kw">// Build. Test. Iterate.</span><span class="cursor"></span>`
+    ],
+    focus:[
+      `<span class="kw">function</span> <span class="fn">buildWithPurpose</span>() {`,
+      `&nbsp;<span class="kw">const</span> values = [`,
+      `&nbsp;&nbsp;<span class="str">'clean interfaces'</span>,`,
+      `&nbsp;&nbsp;<span class="str">'reusable components'</span>,`,
+      `&nbsp;&nbsp;<span class="str">'player experiences'</span>,`,
+      `&nbsp;&nbsp;<span class="str">'continuous learning'</span>`,
+      `&nbsp;];`,
+      `&nbsp;<span class="kw">return</span> values.<span class="fn">map</span>(ship);`,
+      `}`,``,
+      `<span class="fn">buildWithPurpose</span>();<span class="cursor"></span>`
+    ]
+  };
+  let editorTab = 'about';
+  function selectEditor(key) {
+    editorTab = key;
+    const panel = byId('editor-panel');
+    panel.classList.remove('panel-flash'); void panel.offsetWidth; panel.classList.add('panel-flash');
+    panel.innerHTML = editorSamples[key].map((line, i) =>
+      `<div${line ? '' : ' class="code-gap"'}><em>${String(i+1).padStart(2, '0')}</em> ${line}</div>`
+    ).join('');
+    qsa('[data-editor-tab]').forEach(button => {
+      const selected = button.dataset.editorTab === key;
+      button.setAttribute('aria-selected', String(selected)); button.tabIndex = selected ? 0 : -1;
+    });
+  }
+  qsa('[data-editor-tab]').forEach((button, index, tabs) => {
+    button.addEventListener('click', () => selectEditor(button.dataset.editorTab));
+    button.addEventListener('keydown', e => {
+      if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = tabs[(index + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      selectEditor(next.dataset.editorTab); next.focus();
+    });
+  });
+  selectEditor('about');
+
+  let typeIndex = 0, typePosition = 0, deleting = false, typingTimeout;
+  const typeEl = byId('typewriter');
+  function animateType() {
+    const phrases = tr('switches');
+    const full = phrases[typeIndex];
+    if(!motion) {typeEl.textContent = phrases[0]; return;}
+    typePosition += deleting ? -1 : 1;
+    typeEl.textContent = full.slice(0, typePosition);
+    if(!deleting && typePosition === full.length) {
+      deleting = true; typingTimeout = window.setTimeout(animateType, 1700); return;
+    }
+    if(deleting && typePosition === 0) {
+      deleting = false; typeIndex = (typeIndex + 1) % phrases.length;
+      typingTimeout = window.setTimeout(animateType, 260);return;
+    }
+    typingTimeout = window.setTimeout(animateType, deleting ? 35 : 82);
+  }
+  animateType();
+
+  // Accessible dialog for case studies.
+  const dialogOverlay = byId('project-overlay');
+  const dialog = qs('.project-dialog',dialogOverlay);
+  let currentProject = 'fleet', lastFocused = null;
+  function renderProject(id) {
+    currentProject = id; const project = projectDetails[id], body = project[locale()];
+    text('dialog-title',project.title); text('dialog-desc',body.desc);
+    text('dialog-tag',body.label);
+    text('dialog-eyebrow', `${String(projectIds.indexOf(id)+1).padStart(2,'0')} / 05`);
+    const highlight = byId('dialog-highlights'); highlight.replaceChildren();
+    body.items.forEach(item => { const li = document.createElement('li'); li.textContent = item; highlight.appendChild(li); });
+    const stack = byId('dialog-stack'); stack.replaceChildren();
+    project.tags.forEach(tag => {const item = document.createElement('span');item.textContent=tag;stack.append(item);});
+    const link = byId('dialog-link');
+    link.hidden = !project.github;
+    if(project.github) link.href = project.github;
+    const art = byId('dialog-art'); art.replaceChildren();
+    const original = qs(`.project-card[data-project="${id}"] .project-art`);
+    if(original){const clone=original.cloneNode(true); clone.classList.add('modal-project-art');art.append(clone);}
+    byId('dialog-next').setAttribute('aria-label', `${tr('dialogNext')}: ${projectDetails[projectIds[(projectIds.indexOf(id)+1)%projectIds.length]].title}`);
+  }
+  function toggleOverlay(overlay, show, focusTarget) {
+    if(show) {
+      if(!overlay.hidden) return;
+      if(overlay === dialogOverlay && !byId('palette-overlay').hidden) closePalette();
+      if(overlay !== dialogOverlay && !dialogOverlay.hidden) closeProject();
+      lastFocused = document.activeElement;
+      overlay.hidden = false; document.body.classList.add('has-overlay');
+      requestAnimationFrame(() => {overlay.classList.add('shown');(focusTarget||qs('[role="dialog"]',overlay)).focus();});
+    } else {
+      overlay.classList.remove('shown'); overlay.hidden = true;
+      if(dialogOverlay.hidden && byId('palette-overlay').hidden) document.body.classList.remove('has-overlay');
+      if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+  }
+  function openProject(id) { renderProject(id); toggleOverlay(dialogOverlay,true,byId('dialog-close')); }
+  function closeProject() { if(!dialogOverlay.hidden) toggleOverlay(dialogOverlay,false); }
+  qsa('[data-open-project]').forEach(button=>button.addEventListener('click',()=>openProject(button.dataset.openProject)));
+  qsa('.project-card').forEach(card => card.addEventListener('keydown',event => {
+    if ((event.key === 'Enter' || event.key === ' ') && event.target === card) {event.preventDefault();openProject(card.dataset.project);}
+  }));
+  byId('dialog-close').addEventListener('click',closeProject);
+  byId('dialog-next').addEventListener('click',()=>renderProject(projectIds[(projectIds.indexOf(currentProject)+1)%projectIds.length]));
+  dialogOverlay.addEventListener('mousedown', e=>{if(e.target===dialogOverlay) closeProject();});
+
+  // Keyboard command palette: navigate sections, projects and actions.
+  const paletteOverlay=byId('palette-overlay');
+  const paletteInput=byId('palette-input');
+  const paletteResults=byId('palette-results');
+  let activeResult=0;
+  let availableActions=[];
+  const paletteActions=()=>[
+    ...navigation.map(item=>({group:'section',label:item[locale()], detail:'#'+item.id, search:item.id+' '+item.pt+' '+item.en, act:()=>location.hash=item.id})),
+    ...projectIds.map(id=>({group:'openProject',label:projectDetails[id].title,detail:projectDetails[id].tags.join(' · '),search:projectDetails[id].tags.join(' ')+' '+projectDetails[id].title+' '+projectDetails[id].category,act:()=>openProject(id)})),
+    {group:'other',label:isEnglish()?'Switch language':'Alternar idioma',detail:'PT / EN',search:'idioma language',act:()=>byId('lang-toggle').click()},
+    {group:'other',label:isEnglish()?'Switch theme':'Alternar tema',detail:'Light / Dark',search:'tema theme dark light',act:()=>byId('theme-toggle').click()},
+    {group:'other',label:'GitHub',detail:'MateusAugusto1',search:'repositorios github',act:()=>window.open('https://github.com/MateusAugusto1','_blank','noopener,noreferrer')}
+  ];
+  function normalize(input) {return input.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  function renderPalette() {
+    const term=normalize(paletteInput.value.trim());
+    availableActions=paletteActions().filter(a=>normalize(a.label+' '+a.detail+' '+a.search).includes(term));
+    activeResult = Math.max(0,Math.min(activeResult,availableActions.length-1));
+    paletteResults.replaceChildren();
+    if(!availableActions.length){const empty=document.createElement('p');empty.className='palette-empty';empty.textContent=tr('noResults');paletteResults.append(empty);return;}
+    let prevGroup='';
+    availableActions.forEach((item,i)=>{
+      if(item.group!==prevGroup) {const h=document.createElement('div');h.className='palette-category';h.textContent=tr(item.group);paletteResults.append(h);prevGroup=item.group;}
+      const button=document.createElement('button');button.type='button';button.className='palette-item';button.setAttribute('role','option');button.setAttribute('aria-selected',String(i===activeResult));
+      button.dataset.actionIndex=i;
+      const name=document.createElement('strong');name.textContent=item.label;
+      const extra=document.createElement('small');extra.textContent=item.detail;
+      const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');
+      button.append(name,extra,arrow);
+      button.addEventListener('mouseenter',()=>{activeResult=i;updateSelectedAction();});
+      button.addEventListener('click',()=>chooseAction(i));paletteResults.append(button);
+    });
+  }
+  function updateSelectedAction() {qsa('.palette-item',paletteResults).forEach((item,i)=>item.setAttribute('aria-selected',String(i===activeResult)));}
+  function chooseAction(index) {const action=availableActions[index];if(!action)return;closePalette();action.act();}
+  function openPalette() {
+    toggleOverlay(paletteOverlay,true,paletteInput);
+    paletteInput.value='';activeResult=0;renderPalette();
+  }
+  function closePalette() {if(!paletteOverlay.hidden) toggleOverlay(paletteOverlay,false);}
+  byId('command-trigger').addEventListener('click',openPalette);
+  byId('palette-close').addEventListener('click',closePalette);
+  paletteOverlay.addEventListener('mousedown',e=>{if(e.target===paletteOverlay)closePalette();});
+  paletteInput.addEventListener('input',()=>{activeResult=0;renderPalette();});
+  paletteInput.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'||e.key==='ArrowUp') {e.preventDefault();activeResult=(activeResult+(e.key==='ArrowDown'?1:availableActions.length-1))%Math.max(1,availableActions.length);updateSelectedAction();const selected=qs(`[data-action-index="${activeResult}"]`,paletteResults);selected?.scrollIntoView({block:'nearest'});}
+    else if(e.key==='Enter'){e.preventDefault();chooseAction(activeResult);}
+  });
+  document.addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){e.preventDefault();paletteOverlay.hidden?openPalette():closePalette();}
+    if(e.key==='Escape'){if(!paletteOverlay.hidden)closePalette();else if(!dialogOverlay.hidden)closeProject();}
+    if(e.key==='Tab'){
+      const open = !paletteOverlay.hidden ? paletteOverlay : !dialogOverlay.hidden ? dialogOverlay : null;
+      if(!open) return;
+      const focusables=qsa('button:not([disabled]):not([hidden]),a[href]:not([hidden]),input:not([disabled])',open).filter(x=>x.getClientRects().length);
+      if(!focusables.length)return;
+      const first=focusables[0],last=focusables.at(-1);
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    }
+  });
+
+  // Subtle hover effects: only on precise pointing devices and without reduced motion.
+  if(motion && window.matchMedia('(pointer: fine)').matches){
+    qsa('.project-card').forEach(card=>{
+      card.classList.add('tilt-ready');
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+        card.style.setProperty('--card-x',`${(x*100).toFixed(1)}%`);
+        card.style.setProperty('--card-y',`${(y*100).toFixed(1)}%`);
+        card.style.setProperty('--rotate-y',`${((x-.5)*1.8).toFixed(2)}deg`);
+        card.style.setProperty('--rotate-x',`${((.5-y)*1.8).toFixed(2)}deg`);
+      },{passive:true});
+      card.addEventListener('pointerleave',()=>{
+        card.style.removeProperty('--card-x');card.style.removeProperty('--card-y');card.style.removeProperty('--rotate-x');card.style.removeProperty('--rotate-y');
+      });
+    });
+    const visual=qs('.hero-visual');
+    visual.addEventListener('pointermove',e=>{
+      const r=visual.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      visual.style.setProperty('--hero-x',`${(x*13).toFixed(1)}px`);
+      visual.style.setProperty('--hero-y',`${(y*13).toFixed(1)}px`);
+    },{passive:true});
+    visual.addEventListener('pointerleave',()=>{visual.style.removeProperty('--hero-x');visual.style.removeProperty('--hero-y');});
+  }
+  if(motion && 'IntersectionObserver' in window){
+    const elements=qsa('.section-head,.project-card,.skill-panel,.timeline-item,.about-left,.about-right,.github-live');
+    const reveal = new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-revealed');reveal.unobserve(entry.target);}
+    }),{threshold:.07,rootMargin:'0px 0px -35px 0px'});
+    elements.forEach((element,i)=>{element.classList.add('reveal-entry');element.style.setProperty('--stagger',`${Math.min(i%4,3)*48}ms`);reveal.observe(element);});
+  }
+  const navItems=qsa('.nav-menu a[href^="#"]');
+  if('IntersectionObserver' in window){
+    const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      navItems.forEach(link=>link.classList.toggle('current-section',link.getAttribute('href')==='#'+entry.target.id));
+    }),{rootMargin:'-30% 0px -60% 0px'});
+    navigation.forEach(item=>{const section=byId(item.id);if(section)sectionObserver.observe(section);});
+  }
+
+  // GitHub fetch is optional, public and never requires a token; data is rendered as text.
+  const refresh=byId('github-refresh'), feed=byId('github-feed');
+  let waiting=false;
+  function createMessage(message,showLink=false){
+    feed.replaceChildren();const p=document.createElement('p');p.className='github-placeholder';p.textContent=message;feed.append(p);
+    if(showLink){const a=document.createElement('a');a.className='github-fallback';a.href='https://github.com/MateusAugusto1?tab=repositories';a.target='_blank';a.rel='noopener noreferrer';a.textContent=tr('githubVisit')+' ↗';feed.append(a);}
+  }
+  const dateValue = iso => {
+    const d=new Date(iso);if(Number.isNaN(d.getTime()))return '';
+    return d.toLocaleDateString(isEnglish()?'en-US':'pt-BR',{month:'short',year:'numeric'});
+  };
+  async function syncGithub(){
+    if(waiting)return;waiting=true;refresh.disabled=true;refresh.classList.add('loading');createMessage(tr('githubLoading'));
+    try{
+      const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),10000);
+      let response;
+      try{response=await fetch('https://api.github.com/users/MateusAugusto1/repos?per_page=60&sort=updated&type=owner',{headers:{Accept:'application/vnd.github+json'},signal:controller.signal});}finally{clearTimeout(timeout);}
+      if(!response.ok)throw new Error('GitHub: '+response.status);
+      const json=await response.json();
+      if(!Array.isArray(json))throw new Error('Invalid response');
+      const repos=json.filter(repo=>!repo.fork && !repo.archived && repo.private===false && repo.html_url && new URL(repo.html_url).hostname==='github.com').sort((a,b)=>new Date(b.pushed_at||0)-new Date(a.pushed_at||0)).slice(0,3);
+      feed.replaceChildren();
+      if(!repos.length){createMessage(tr('githubEmpty'));return;}
+      for(const repo of repos){
+        const card=document.createElement('a');card.className='github-repo';card.href=repo.html_url;card.target='_blank';card.rel='noopener noreferrer';
+        const title=document.createElement('strong');title.textContent=(repo.name||'Repository').slice(0,80);
+        const desc=document.createElement('span');desc.textContent=(repo.description||'GitHub repository').slice(0,130);
+        const badge=document.createElement('small');badge.textContent=[repo.language,tr('githubUpdated')+' '+dateValue(repo.pushed_at)].filter(Boolean).join(' · ');
+        const arrow=document.createElement('b');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');
+        card.append(title,desc,badge,arrow);feed.append(card);
+      }
+    }catch(error){createMessage(tr('githubError'),true);}
+    finally{waiting=false;refresh.disabled=false;refresh.classList.remove('loading');}
+  }
+  refresh.addEventListener('click',syncGithub);
+
+  function updateDynamic(){
+    qsa('[data-dynamic]').forEach(el=>{const val=tr(el.dataset.dynamic);if(typeof val==='string')el.textContent=val;});
+    paletteInput.placeholder=tr('searchPlaceholder');
+    byId('command-trigger').setAttribute('aria-label',tr('cmdDescription'));
+    byId('dialog-close').setAttribute('aria-label',tr('close'));
+    qsa('.project-card').forEach(card=>{card.setAttribute('aria-label',`${tr('detailLabel')} ${projectDetails[card.dataset.project].title}`);});
+    if(!dialogOverlay.hidden)renderProject(currentProject);
+    if(!paletteOverlay.hidden)renderPalette();
+    clearTimeout(typingTimeout);typePosition=0;deleting=false;typeEl.textContent='';animateType();
+  }
+
+  // Ambient pointer-reactive glow for the sci-fi skin.
+  const ultronPointer = event => {
+    document.body.style.setProperty('--mx', `${event.clientX}px`);
+    document.body.style.setProperty('--my', `${event.clientY}px`);
+  };
+  if(motion){
+    window.addEventListener('pointermove', ultronPointer, {passive:true});
+  }
+
+  document.addEventListener('portfolio:language',updateDynamic);
+  updateDynamic();
+})();
+</script><script data-source="fixes.js">/* Small resilient enhancements: safe text selection, no extra dependencies. */
+(() => {
+  const root = document.documentElement;
+  // Hide a stale interactive link in old browsers rather than send visitors to '#'.
+  const dialogLink = document.getElementById('dialog-link');
+  if (dialogLink) dialogLink.addEventListener('click', e => {
+    if (dialogLink.hidden || dialogLink.getAttribute('href') === '#') e.preventDefault();
+  });
+
+  // Restore navigation if viewport changes from mobile to desktop.
+  const menu = document.getElementById('nav-menu');
+  const toggle = document.getElementById('menu-toggle');
+  if (menu && toggle) window.addEventListener('resize', () => {
+    if (window.innerWidth > 920 && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  }, {passive:true});
+
+  // Better fallback for insecure/file:// contexts where the clipboard API may not exist.
+  const copy = document.getElementById('copy-email');
+  if (copy && !navigator.clipboard?.writeText) {
+    copy.addEventListener('click', () => {
+      const t = document.createElement('textarea');
+      t.value = 'amateus593@gmail.com'; t.setAttribute('readonly','');
+      t.style.position = 'fixed'; t.style.left = '-9999px';
+      document.body.appendChild(t); t.select();
+      try {
+        if (document.execCommand('copy')) {
+          document.getElementById('copy-status').textContent = root.lang.startsWith('en') ? 'Email copied.' : 'E-mail copiado.';
+          copy.querySelector('[data-i18n]').textContent = root.lang.startsWith('en') ? 'Email copied' : 'E-mail copiado';
+        }
+      } catch { /* mailto remains available */ }
+      t.remove();
+    });
+  }
+})();
+</script></body>
+</html>
